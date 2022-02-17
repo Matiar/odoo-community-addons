@@ -1,0 +1,108 @@
+/*----------------------
+ HEADER STYLE
+-----------------------*/
+.header-socials {
+    line-height: 22px;
+    margin-bottom: 0px;
+}
+
+.header-socials li {
+    padding: 8px;
+
+    &:first-child {
+        padding-left: 0;
+    }
+}
+
+.header-socials li a {
+    color: theme-color("primary");
+}
+.top-bar .container {
+    @include media-breakpoint-down(md) {
+        width: 95%;
+    }
+}
+/*-----------------
+ LOGO BAR
+-------------------*/
+.logo-bar {
+    padding: 30px 0px 60px;
+}
+
+.top-info-block {
+    margin-right: 30px;
+}
+
+.top-info-block h5,
+.top-info-block p {
+    margin-bottom: 0px;
+    white-space: pre;
+}
+
+.icon-block {
+    margin-right: 20px;
+    color: theme-color("primary");
+    font-size: 40px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.top-info-block:last-child {
+    margin-right: 0px;
+}
+
+.header-bar {
+    overflow: visible;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.main-navigation {
+    margin-top: -40px;
+}
+.header-main-nav {
+    margin-top: -40px;
+    z-index: 9;
+
+    @include media-breakpoint-down(md) {
+        margin-top: 0;
+        width: 95%;
+    }
+    @include media-breakpoint-down(sm) {
+        margin-top: 20px;
+    }
+
+    & .navbar-brand {
+        display: none;
+
+        @include media-breakpoint-down(md) {
+            display: block;
+        }
+    }
+    .navbar-nav {
+        & .nav-item {
+            & .nav-link {
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+.transparent_header {
+    .header-main-nav {
+        margin-top: 0;
+    }
+}
+.o_header_affixed .header-main-nav {
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+}
+.s_carousel,
+.page-banner-area {
+    margin-top: -40px;
+}
+.divider {
+    display: none;
+}

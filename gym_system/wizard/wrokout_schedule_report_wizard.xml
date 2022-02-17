@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+       <record model="ir.ui.view" id="workout_schedule_report_wizard">
+          <field name="name">Workout Schedule Report</field>
+          <field name="model">workout.schedule.report</field>
+          <field name="arch" type="xml">
+              <form string="workout schedule report">
+                <group>
+                    <group>
+                        <field name="customer_id" required="1" domain="[('trainer', '=', False)]"/>
+                    </group>
+                    <group>
+                        <field name="from_date" required="1"/>
+                        <field name="to_date" required="1"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="print_workout_schedule" string="Print" type="object" class="oe_highlight"/> or 
+                    <button special="cancel" string="Cancel" class="btn-default"/>
+                </footer>
+              </form>
+          </field>
+      </record>
+     
+      <record model="ir.actions.act_window" id="workout_schedule_report_action">
+          <field name="name">Workout Schedule Report</field>
+          <field name="res_model">workout.schedule.report</field>
+          <field name="view_mode">form</field>
+          <field name="target">new</field>
+      </record>
+     
+      <act_window id="workout_new_schedule_report_id"
+          multi="True"
+          key2="client_action_multi" name="new excercise"
+          res_model="workout.schedule.report" src_model="gym.workout"
+          view_mode="form" target="new"  />
+          
+        <menuitem id="gym_id" name="Gym"/>
+    <menuitem id="print_report_menu" name="Reports" parent="gym_id" sequence="10" groups = "gym_officer,gym_manager,gym_trainer"/>
+    <menuitem id="print_workout_schedule_report_menu" name="Print Workout Schedule" parent="print_report_menu" action="workout_schedule_report_action" sequence="1" />
+     
+  </data>
+</odoo>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="rocker_executor_view_form" model="ir.ui.view">
+        <field name="name">rocker.executor.view.form</field>
+        <field name="model">ir.cron</field>
+        <field name="arch" type="xml">
+            <form string="Rocker Report Executor" save="true" create="false" delete="false" discard="false" edit="true">
+                <header>
+                    <button name="method_direct_trigger" type="object" string="Run Manually" class="oe_highlight"/>
+                    <button name="toggle_active" type="object" class="oe_stat_button" string="Start/Stop"/>
+                </header>
+
+                <div class="oe_title" >
+                    <div class="oe_button_box" name="button_box">
+                        <widget name="web_ribbon" title="Stopped" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                        <widget name="web_ribbon" title="Running" bg_color="bg-success" attrs="{'invisible': [('active', '=', False)]}"/>
+
+                    </div>
+                    <field name="active" invisible="1"/>
+                </div>
+
+                <group col="2">
+                <field name="priority"/>
+                <field name="name"/>
+                <field name="nextcall"/>
+                <field name="interval_number"/>
+                <field name="interval_type"/>
+                <field name="numbercall"/>
+                <field name="user_id" invisible="1"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="rocker_executor_view_tree" model="ir.ui.view">
+            <field name="model">ir.cron</field>
+            <field name="arch" type="xml">
+                <tree string="Scheduled Actions" decoration-muted="(not active)">
+                    <field name="priority"/>
+                    <field name="name"/>
+                    <field name="nextcall"/>
+                    <field name="interval_number"/>
+                    <field name="interval_type"/>
+                    <field name="numbercall"/>
+                    <field name="user_id" invisible="1"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+        <record id="rocker_executor_view_search" model="ir.ui.view">
+            <field name="model">ir.cron</field>
+            <field name="arch" type="xml">
+                <search string="Scheduled Actions">
+                    <field name="name" string="Scheduled Action"/>
+                    <field name="user_id"/>
+                    <field name="nextcall"/>
+                    <field name="active"/>
+                    <separator/>
+                    <filter string="All" name="all" domain="['|', ('active', '=', False), ('active', '=', True)]" />
+                    <group expand="0" string="Group By">
+                        <filter string="User" name="user" domain="[]" context="{'group_by':'user_id'}"/>
+                        <filter string="Execution" name="execution" domain="[]" context="{'group_by':'nextcall'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+</odoo>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>	
+	
+	
+	<record id="rocker_about" model="ir.ui.view">
+		<field name="name">rocker.about.form</field>
+		<field name="model">rocker.about</field>
+		<field name="arch" type="xml">
+			<form string="About Rocker Reporting" create="false" edit="false">
+				<div>
+					<field name="name"  class="oe_inline"/>
+					<field name="paypal" class="oe_inline"/>
+					<field name="legal" class="oe_inline"/>
+				</div>
+				<footer>
+					<button string="OK" class="btn-primary" special="cancel" />
+				</footer>
+
+			</form>
+		</field>
+	</record>
+
+</data>
+</odoo>

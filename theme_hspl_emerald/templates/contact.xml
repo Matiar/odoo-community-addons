@@ -1,0 +1,248 @@
+<odoo>
+    <template id="theme_contactus" inherit_id="website.contactus" name="Contact Us">
+        <xpath
+            expr="//div[hasclass('container')]/div[@class='row']"
+            position="attributes"
+        >
+            <attribute name="class">row align-items-center pb-5</attribute>
+        </xpath>
+        <xpath expr="//section[hasclass('s_text_block')]" position="replace">
+            <section class="s_text_block section pb-0 pt-0">
+                <div class="container">
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <h5>Leave a Message</h5>
+                            <!-- Heading -->
+                            <h2 class="section-title mb-2 " style="font-size:35px;">
+                                Tell us about
+                                <span class="font-weight-normal">yourself</span>
+                            </h2>
+                            <!-- Subheading -->
+                            <p class="mb-5 ">
+                                Whether you have questions or you would just like to say hello, contact us.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- / .row -->
+                </div>
+            </section>
+        </xpath>
+        <!--        <xpath expr="//div[hasclass('col-lg-8')]" position="attributes">-->
+        <!--            <attribute name="class">col-lg-6</attribute>-->
+        <!--        </xpath>-->
+        <xpath expr="//div[hasclass('col-lg-4')]" position="replace">
+            <div class="col-lg-6 contact-map mt32">
+                <t t-if="res_company.google_map_img()">
+                    <t
+                        t-set="map_link"
+                        t-value="'%s&amp;ie=UTF8&amp;iwloc=&amp;output=embed'%res_company.google_map_link()"
+                    />
+                    <iframe id="map" class="" t-att-src="map_link" />
+                </t>
+                <div id="leaf_map" style="width:100%px; height: 500px" />
+            </div>
+        </xpath>
+        <xpath expr="//div[hasclass('oe_structure')]" position="replace">
+            <section class="page-banner-area page-contact">
+                <div class="overlay" />
+                <!-- Content -->
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-9 col-md-12 col-12 text-center">
+                            <div class="page-banner-content">
+                                <h1
+                                    class="display-4 font-weight-bold"
+                                >Got a question?</h1>
+                                <p>We'd love to talk about how we can help you.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / .row -->
+                </div>
+                <!-- / .container -->
+            </section>
+            <div id="contact-info" class="pb-5">
+                <t t-set="company" t-value="res_company.partner_id" />
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div
+                            class="col-lg-4 col-sm-6 col-md-6"
+                            t-if="company.street or company.street2 or company.city or company.state_id.name or company.zip or company.country_id.name"
+                        >
+                            <div class="contact-info-block text-center">
+                                <i class="fa fa-map-marker" />
+                                <h4>Address</h4>
+                                <p class="lead">
+                                    <t t-esc="company.street" />
+                                    <t t-esc="company.street2" />
+                                    <t t-esc="company.city" />
+                                    <t t-esc="company.state_id.name" />
+                                    <t t-esc="company.zip" />
+                                    <t t-esc="company.country_id.name" />
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-md-6" t-if="company.email">
+                            <div class="contact-info-block text-center">
+                                <i class="fa fa-envelope-o" />
+                                <h4>Email</h4>
+                                <p class="lead">
+                                    <t t-esc="company.email" />
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-md-6" t-if="company.phone">
+                            <div class="contact-info-block text-center">
+                                <i class="fa fa-phone" />
+                                <h4>Phone Number</h4>
+                                <p class="lead">
+                                    <t t-esc="company.phone" />
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+    <template
+        id="contactus_form"
+        name="Contact Form (Opportunity)"
+        inherit_id="website_crm.contactus_form"
+    >
+        <xpath expr="//form[@data-model_name='crm.lead']" position="replace">
+            <form
+                action="/website_form/"
+                method="post"
+                data-model_name="crm.lead"
+                data-success_page="/contactus-thank-you"
+                class="s_website_form container-fluid mt32"
+                enctype="multipart/form-data"
+                data-editable-form="false"
+            >
+                <div class="row">
+                    <div
+                        class="form-group col-sm-6 mb-5 form-field o_website_form_required_custom"
+                    >
+                        <label
+                            class="h6 d-block text-uppercase"
+                            for="contact_name"
+                        >Your Name</label>
+                        <div class="input-group">
+                            <input
+                                type="text"
+                                placeholder="John Doe"
+                                class="form-control o_website_form_input"
+                                name="contact_name"
+                                t-att-value="request.params.get('contact_name', '')"
+                                required=""
+                            />
+                        </div>
+                    </div>
+                    <div class="form-group form-field col-sm-6 mb-5">
+                        <label
+                            class="h6 d-block text-uppercase"
+                            for="phone"
+                        >Phone Number</label>
+                        <div class="input-group">
+                            <input
+                                type="text"
+                                class="form-control o_website_form_input"
+                                placeholder="1-800-643-4500"
+                                name="phone"
+                                t-att-value="request.params.get('phone', '')"
+                            />
+                        </div>
+                    </div>
+                    <div
+                        class="form-group form-field o_website_form_required_custom col-sm-6 mb-5"
+                    >
+                        <label
+                            class="h6 d-block text-uppercase"
+                            for="email_from"
+                        >Email</label>
+                        <div class="input-group">
+                            <input
+                                type="text"
+                                class="form-control o_website_form_input"
+                                placeholder="john@gmail.com"
+                                name="email_from"
+                                required=""
+                                t-att-value="request.params.get('email_from', '')"
+                            />
+                        </div>
+                    </div>
+                    <div class="form-group form-field col-sm-6 mb-5">
+                        <label
+                            class="h6 d-block text-uppercase"
+                            for="partner_name"
+                        >Your Company</label>
+                        <div class="input-group">
+                            <input
+                                type="text"
+                                placeholder="Company Name"
+                                class="form-control o_website_form_input"
+                                name="partner_name"
+                                t-att-value="request.params.get('partner_name', '')"
+                            />
+                        </div>
+                    </div>
+                    <div
+                        class="form-group form-field o_website_form_required col-12 mb-5"
+                    >
+                        <label
+                            class="h6 d-block text-uppercase"
+                            for="name"
+                        >Subject</label>
+                        <div class="input-group">
+                            <input
+                                type="text"
+                                placeholder="Web design"
+                                class="form-control o_website_form_input"
+                                name="name"
+                                required=""
+                                t-att-value="request.params.get('name', '')"
+                            />
+                        </div>
+                    </div>
+                    <div
+                        class="form-group form-field o_website_form_required_custom col-12 mb-5"
+                    >
+                        <label
+                            class="h6 d-block text-uppercase"
+                            for="description"
+                        >Your Question</label>
+                        <div class="input-group">
+                            <textarea
+                                placeholder="Hi there, I would like to ..."
+                                class="form-control o_website_form_input"
+                                name="description"
+                                required=""
+                            >
+                                <t t-esc="request.params.get('description', '')" />
+                            </textarea>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <div class="col-12">
+                            <a
+                                href="#"
+                                role="button"
+                                class="btn btn-primary btn-circled btn-lg o_website_form_send"
+                            >
+                                Send Message
+                            </a>
+
+                            <span id="o_website_form_result" />
+                            <p
+                                class="small pt-3"
+                            >We'll get back to you in 1-2 business days.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+
+        </xpath>
+    </template>
+</odoo>

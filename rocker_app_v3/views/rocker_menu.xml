@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_rocker_report" model="ir.actions.act_window">
+        <field name="name">Rocker Reports</field>
+        <field name="res_model">rocker.report</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_type_group':1}</field>
+    </record>
+
+
+    <record id="action_rocker_archive" model="ir.actions.act_window">
+        <field name="name">Rocker Archive</field>
+        <field name="res_model">rocker.archive</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record id="action_rocker_database" model="ir.actions.act_window">
+        <field name="name">Rocker Databases</field>
+        <field name="res_model">rocker.database</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="rocker_executor_act" model="ir.actions.act_window">
+        <field name="name">Executor</field>
+        <field name="res_model">ir.cron</field>
+        <field name="view_mode">form</field>
+        <field name="res_id" ref="rocker_app_v3.rocker_cron_report_executor"/>
+        <field name="view_id" ref="rocker_executor_view_form"/>
+    </record>
+
+    <record id="action_rocker_about_prog" model="ir.actions.server">
+        <field name="name">Show About</field>
+        <field name="model_id" ref="rocker_app_v3.model_rocker_about"/>
+        <field name="state">code</field>
+        <field name="code">action = model._show_about()</field>
+    </record>
+
+    <record id="action_test_excel" model="ir.actions.server">
+        <field name="name">Test Excel</field>
+        <field name="model_id" ref="rocker_app_v3.model_rocker_report"/>
+        <field name="state">code</field>
+        <field name="code">action = model._testexcel()</field>
+    </record>
+
+    <menuitem id="rocker_menu" 
+        name="Rocker" 
+        groups="rocker_app_v3.rocker_group_user"/>
+    <menuitem id="menu_rocker_report" 
+        name="Reports" 
+        action="action_rocker_report" 
+        parent="rocker_menu" 
+        sequence="10" />
+    <menuitem id="menu_rocker_archive" 
+        name="Report Archive" 
+        action="action_rocker_archive" 
+        parent="rocker_menu" 
+        sequence="20" />
+    <menuitem id="menu_rocker_database" 
+        name="Databases" 
+        action="action_rocker_database" 
+        parent="rocker_menu" 
+        sequence="30" 
+        groups="rocker_app_v3.rocker_group_manager" />
+    <menuitem id="menu_rocker_executor" 
+        name="Executor" 
+        action="rocker_executor_act" 
+        parent="rocker_menu" 
+        sequence="40" 
+        groups="rocker_app_v3.rocker_group_manager" />
+    <menuitem id="menu_rocker_help" 
+        name="Help" 
+        parent="rocker_menu" 
+        sequence="50" />
+    <menuitem id="menu_rocker_testexcel" 
+        name="Test Excel creation" 
+        action="action_test_excel" 
+        parent="menu_rocker_help" 
+        sequence="10" 
+        groups="rocker_app_v3.rocker_group_manager" />
+    <menuitem id="menu_rocker_about" 
+        name="About Rocker Reporting..." 
+        action="action_rocker_about_prog" 
+        parent="menu_rocker_help" 
+        sequence="20" />
+
+</odoo>

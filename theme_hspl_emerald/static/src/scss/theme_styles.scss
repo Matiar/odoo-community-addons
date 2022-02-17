@@ -1,0 +1,249 @@
+/*--------------------
+ mixin
+-----------------*/
+
+@mixin animation(
+    $delay,
+    $duration,
+    $animation,
+    $timing_function: null,
+    $iteration: null,
+    $fill_mode: null
+) {
+    /* For Safari*/
+    -webkit-animation-delay: $delay;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-name: $animation;
+    -webkit-animation-timing-function: $timing_function;
+    -webkit-animation-iteration-count: $iteration;
+    -webkit-animation-fill-mode: $fill_mode;
+
+    /*For Firefox*/
+    -moz-animation-delay: $delay;
+    -moz-animation-duration: $duration;
+    -moz-animation-name: $animation;
+    -moz-animation-timing-function: $timing_function;
+    -moz-animation-iteration-count: $iteration;
+    -moz-animation-fill-mode: $fill_mode;
+
+    /*Internet Explorer*/
+    -ms-animation-delay: $delay;
+    -ms-animation-duration: $duration;
+    -ms-animation-name: $animation;
+    -ms-animation-timing-function: $timing_function;
+    -ms-animation-iteration-count: $iteration;
+    -ms-animation-fill-mode: $fill_mode;
+
+    /*For Opera*/
+    -o-animation-delay: $delay;
+    -o-animation-duration: $duration;
+    -o-animation-name: $animation;
+    -o-animation-timing-function: $timing_function;
+    -o-animation-iteration-count: $iteration;
+    -o-animation-fill-mode: $fill_mode;
+
+    /* Standard syntax */
+    animation-delay: $delay;
+    animation-duration: $duration;
+    animation-name: $animation;
+    animation-timing-function: $timing_function;
+    animation-iteration-count: $iteration;
+    animation-fill-mode: $fill_mode;
+}
+/*--------------------
+ Common
+-----------------*/
+body {
+    font-family: "Muli", "Odoo Unicode Support Noto", sans-serif !important;
+    font-size: 0.9735rem;
+    /*color:#6c757d;*/
+}
+.font-weight-500 {
+    font-weight: 500 !important;
+}
+.section-title {
+    margin-bottom: 15px;
+}
+.section-heading {
+    margin-bottom: 80px;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+.img-thumbnail {
+    padding: 0.25rem;
+    border: 1px solid #dee2e6;
+    background-color: #fff;
+}
+
+.section {
+    position: relative;
+    padding: 8.125rem 0;
+
+    @include media-breakpoint-down(sm) {
+        padding: 60px 0px;
+    }
+}
+.form-control {
+    padding: 0.375rem 0.75rem;
+}
+.dropdown-item {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 768px) {
+    .section {
+        padding: 7.5rem 0;
+    }
+}
+
+.section-top {
+    padding-top: 8.125rem;
+}
+
+.section-bottom {
+    padding-bottom: 8.125rem;
+}
+
+@media (min-width: 768px) {
+    .section-top {
+        padding-top: 10.3125rem;
+    }
+}
+.btn {
+    transition: all 0.2s ease-in-out;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    position: relative;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+.rounded-radius {
+    border-radius: 5px;
+}
+.btn-white {
+    background: #fff;
+    color: #212529;
+
+    &:hover {
+        background: theme-color("primary") !important;
+        border-color: theme-color("primary") !important;
+        color: #fff;
+    }
+}
+.btn-circled {
+    border-radius: 75px;
+}
+
+.slideInUp {
+    display: block;
+    margin: 0;
+    @include animation(0, 0.5s, slideInUp, ease, 1);
+}
+.dropdown-menu {
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.05),
+        -2px 0px 5px 1px rgba(0, 0, 0, 0.05);
+}
+.dropdown-item {
+    transition: background-color 0.1s;
+}
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 20%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+.navbar-dark .navbar-nav .nav-item {
+    color: $navbar-dark-color;
+}
+/*--------------- Footer -----------------*/
+#footer .footer-brand {
+    font-size: 30px;
+}
+
+#footer .footer-links {
+    padding-left: 0;
+    list-style-type: none;
+}
+.footer-widget p {
+    color: inherit;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 32px;
+    font-size: 14px;
+}
+.footer-widget img {
+    max-height: 60px;
+}
+
+.footer-widget h3 {
+    color: inherit;
+    margin-bottom: 30px;
+}
+
+.footer-links a {
+    color: inherit;
+    line-height: 38px;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+.footer-links span.fa {
+    width: 25px;
+}
+
+.footer-copy {
+    color: inherit;
+    font-size: 16px;
+    position: relative;
+
+    @include media-breakpoint-down(sm) {
+        text-align: center;
+    }
+}
+
+/*-----------------------------
+ SCROLL TO TOP
+--------------------------------*/
+.scroll-to-top {
+    position: fixed;
+    content: "";
+    right: 30px;
+    bottom: 50px;
+    z-index: 999;
+    background: theme-color("primary");
+    color: #fff !important;
+    border-radius: 100%;
+    opacity: 0;
+}
+
+.scroll-to-top i {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    text-align: center;
+    font-size: 22px;
+    line-height: 60px;
+    display: block;
+    box-shadow: 0 7px 22px rgba(0, 0, 0, 0.08);
+}
+
+.scroll-to-top:hover,
+.scroll-to-top:focus {
+    text-decoration: none;
+}
+
+.reveal {
+    transition: all 0.3s;
+    cursor: pointer;
+    opacity: 1;
+}

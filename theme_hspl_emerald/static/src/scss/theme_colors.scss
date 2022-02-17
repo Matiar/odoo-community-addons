@@ -1,0 +1,82 @@
+// $theme-colors: #21c87a  !default;
+
+// /* ================= Main Colors =========================*/
+// $o-theme-color-palettes: (
+//     (
+//         'alpha': $theme-colors,
+//         'beta': #343a40,
+//         'gamma': #4c9cba,
+//         'delta': #000000,
+//         'epsilon': $theme_color,
+//     ),
+// );
+/* ==================== Text Colors =========================*/
+$o-color-palettes: map-merge(
+    $o-color-palettes,
+    (
+        "base-1": (
+            "o-color-1": #21c87a,
+            "o-color-2": #343a40,
+            "o-color-3": #4c9cba,
+            "o-color-4": #eeeeee,
+            "o-color-5": #eeeeee,
+            "body": null,
+            // Default to bootstrap
+            "menu": null,
+            "footer": #1e1e1e,
+            "text": #6c757d,
+            "h1": #212529,
+            "h2": #212529,
+            "h3": #212529,
+            "h4": #212529,
+            "h5": #212529,
+            "h6": #212529,
+        ),
+        "base-2": (
+            "o-color-1": #337ab7,
+            "o-color-2": #e9ecef,
+            "o-color-3": #f8f9fa,
+            "o-color-4": #ffffff,
+            "o-color-5": #343a40,
+            "menu": 2,
+            "footer": 2,
+            "copyright": 5,
+        ),
+    )
+);
+$o-color-palette-name: "base-1" !default;
+
+// Theme colors
+$o-base-theme-color-palette: () !default;
+$o-theme-color-palettes: (
+    // alpha -> epsilon are old color names kept for compatibility.
+    // They should not be used in the code base anymore and ideally they will
+    // not generate any classes for >= 13.4 databases.
+    "base-1":
+        (
+            "alpha": #21c87a,
+            "beta": #343a40,
+            "gamma": #4c9cba,
+            "delta": #000000,
+            "epsilon": #21c87a,
+        )
+) !default;
+$o-theme-color-palette-name: "base-1" !default;
+
+/* ===================== State Colors ========================*/
+$success: #00b115 !default;
+$info: #ffaa50 !default;
+$warning: #ff5050 !default;
+$danger: #900000 !default;
+
+$theme-colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: map-merge(
+    (
+        "success": $success,
+        "info": $info,
+        "warning": $warning,
+        "danger": $danger,
+    ),
+    $theme-colors
+);

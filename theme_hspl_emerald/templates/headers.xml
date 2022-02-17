@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+
+    <template id="header_1" inherit_id="website.layout" active="True" name="Header 1">
+        <xpath expr="//header" position="before">
+            <div class="top-bar-main">
+                <div
+                    class="top-bar bg-dark py-1"
+                    id="top-bar"
+                    t-if="res_company.city or res_company.zip or res_company.country_id or website.social_facebook or website.social_linkedin or website.social_youtube or website.social_github or website.social_instagram"
+                >
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 col-md-6">
+                                <div
+                                    class="top-bar-left text-white"
+                                    t-if="res_company.city or res_company.zip or res_company.country_id"
+                                >
+                                    <i class="fa fa-map-marker" />
+                                    <span class="ml-2" t-field="res_company.city" />
+                                    <span t-field="res_company.country_id" />
+                                    <span t-field="res_company.zip" />
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 ml-lg-auto col-md-6">
+                                <ul
+                                    class="d-flex list-unstyled header-socials float-lg-right"
+                                >
+                                    <li t-if="website.social_facebook">
+                                        <a t-att-href="website.social_facebook">
+                                            <span class="fab fa-facebook-f" />
+                                        </a>
+                                    </li>
+                                    <li t-if="website.social_twitter">
+                                        <a t-att-href="website.social_twitter">
+                                            <span class="fab fa-twitter" />
+                                        </a>
+                                    </li>
+                                    <li t-if="website.social_linkedin">
+                                        <a t-att-href="website.social_linkedin">
+                                            <span class="fab fa-linkedin" />
+                                        </a>
+                                    </li>
+                                    <li t-if="website.social_youtube">
+                                        <a t-att-href="website.social_youtube">
+                                            <span class="fab fa-youtube" />
+                                        </a>
+                                    </li>
+                                    <li t-if="website.social_github">
+                                        <a t-att-href="website.social_github">
+                                            <span class="fab fa-github" />
+                                        </a>
+
+                                    </li>
+                                    <li t-if="website.social_instagram">
+                                        <a t-att-href="website.social_instagram">
+                                            <span class="fab fa-instagram" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="logo-bar d-none d-md-block d-lg-block bg-light">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <div class="logo d-none d-lg-block">
+                                    <t
+                                        t-set="logo_show"
+                                        t-value="request.website.viewref('website.option_header_off_canvas_logo_show').active"
+                                    />
+                                    <t t-if="logo_show">
+                                        <a href="/" class="navbar-brand logo">
+                                            <span
+                                                t-field="website.logo"
+                                                t-options="{'widget': 'image'}"
+                                                role="img"
+                                                t-att-aria-label="'Logo of %s' % website.name"
+                                                t-att-title="website.name"
+                                            />
+                                        </a>
+                                    </t>
+                                    <t t-else="">
+                                        <a
+                                            class="navbar-brand"
+                                            href="/"
+                                            t-if="website"
+                                            t-field="website.name"
+                                        >My
+                                            Website
+                                        </a>
+                                    </t>
+                                </div>
+                            </div>
+
+                            <div
+                                class="col-lg-8 justify-content-lg-end ml-lg-auto d-flex col-12 col-md-12 justify-content-center "
+                            >
+                                <div
+                                    class="top-info-block d-inline-flex"
+                                    t-if="res_company.phone"
+                                >
+                                    <div class="icon-block">
+                                        <i class="ti-mobile" />
+                                    </div>
+                                    <div class="info-block">
+                                        <h5
+                                            class="font-weight-500"
+                                            t-field="res_company.phone"
+                                        />
+                                        <p>Call Free</p>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="top-info-block d-inline-flex"
+                                    t-if="res_company.email"
+                                >
+                                    <div class="icon-block">
+                                        <i class="ti-email" />
+                                    </div>
+                                    <div class="info-block">
+                                        <h5
+                                            class="font-weight-500"
+                                            t-field="res_company.email"
+                                        />
+                                        <p>Email Us</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//header//nav" position="replace">
+            <nav
+                data-name="Navbar"
+                class="navbar navbar-expand-lg navbar-dark bg-primary header-main-nav container rounded-radius"
+            >
+                <div
+                    id="top_menu_container"
+                    class="container justify-content-start justify-content-lg-between"
+                >
+                    <div
+                        id="top_menu_collapse"
+                        class="collapse navbar-collapse order-last order-lg-0"
+                    >
+                        <ul
+                            id="top_menu"
+                            t-attf-class="nav navbar-nav mr-auto text-left"
+                        >
+                            <t t-set="_nav_class" t-value="'flex-grow-1'" />
+                            <!-- Menu -->
+                            <t t-foreach="website.menu_id.child_id" t-as="submenu">
+                                <t t-call="website.submenu">
+                                    <t t-set="item_class" t-value="'nav-item'" />
+                                    <t t-set="link_class" t-value="'nav-link'" />
+                                </t>
+                            </t>
+                            <t t-call="website_sale.header_cart_link">
+                                <t t-set="_icon" t-value="True" />
+                                <t t-set="_text" t-value="True" />
+                                <t t-set="_item_class" t-value="'nav-item mx-lg-3'" />
+                                <t t-set="_link_class" t-value="'nav-link'" />
+                            </t>
+                        </ul>
+                    </div>
+                    <t t-call="website.placeholder_header_language_selector">
+                        <t t-set="_div_classes" t-value="'ml-2'" />
+                    </t>
+                </div>
+            </nav>
+        </xpath>
+        <xpath expr="//div[@id='top_menu_collapse']" position="after">
+            <div class="t-header-account d-none d-lg-block">
+                <div class="dropdown" t-ignore="true" t-if="not user_id._is_public()">
+                    <a
+                        href="#"
+                        class="dropdown-toggle btn btn-white btn-circled"
+                        data-toggle="dropdown"
+                    >
+                        <b>
+                            <span
+                                t-esc="user_id.name[:23] + '...' if user_id.name and len(user_id.name) &gt; 25 else user_id.name"
+                            />
+                        </b>
+                    </a>
+                    <div
+                        class="dropdown-menu dropdown-menu-right js_usermenu"
+                        role="menu"
+                    >
+                        <a href="/my/home" role="menuitem" class="dropdown-item">My
+                            Account
+                        </a>
+                        <a
+                            id="o_logout"
+                            class="dropdown-item"
+                            t-attf-href="/web/session/logout?redirect=/"
+                            role="menuitem"
+                        >Logout
+                        </a>
+                    </div>
+                </div>
+                <div
+                    groups="base.group_public"
+                    class="t-login"
+                    t-if="request.website.viewref('portal.user_sign_in').active"
+                >
+                    <a t-attf-href="/web/login" class="btn btn btn-white btn-circled">
+                        <b>Log In</b>
+                    </a>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="header_2" inherit_id="website.layout" active="False" name="Header 2">
+        <xpath expr="//header//nav" position="replace">
+            <nav
+                data-name="Navbar"
+                class="navbar navbar-expand-lg navbar-dark header-main-nav bg-dark"
+                style="margin-top:0px;"
+            >
+                <div
+                    id="top_menu_container"
+                    class="container justify-content-start justify-content-lg-between"
+                >
+                    <!-- Brand -->
+                    <a
+                        href="/"
+                        t-attf-class="navbar-brand logo #{_link_class}"
+                        style="display:block !important;"
+                    >
+                        <span
+                            t-field="website.logo"
+                            t-options="{'widget': 'image'}"
+                            role="img"
+                            t-att-aria-label="'Logo of %s' % website.name"
+                            t-att-title="website.name"
+                        />
+                    </a>
+                    <!-- Navbar Toggler -->
+                    <t t-call="website.navbar_toggler">
+                        <t t-set="_toggler_class" t-value="'ml-auto'" />
+                    </t>
+                    <!-- Navbar Collapse -->
+                    <div
+                        id="top_menu_collapse"
+                        class="collapse navbar-collapse order-last order-lg-0"
+                    >
+                        <ul
+                            id="top_menu"
+                            t-attf-class="nav navbar-nav ml-auto text-lg-right text-left"
+                        >
+                            <t t-foreach="website.menu_id.child_id" t-as="submenu">
+                                <t t-call="website.submenu">
+                                    <t t-set="item_class" t-value="'nav-item'" />
+                                    <t t-set="link_class" t-value="'nav-link'" />
+                                </t>
+                            </t>
+                            <t
+                                t-set="website_sale_order"
+                                t-value="website.sale_get_order()"
+                            />
+                            <t t-call="website_sale.header_cart_link">
+                                <t t-set="_icon" t-value="False" />
+                                <t t-set="_text" t-value="True" />
+                                <t t-set="_item_class" t-value="'nav-item mx-lg-3'" />
+                                <t t-set="_link_class" t-value="'nav-link'" />
+                            </t>
+                            <t t-call="portal.placeholder_user_sign_in">
+                                <t
+                                    t-set="_item_class"
+                                    t-value="'nav-item ml-lg-auto'"
+                                />
+                                <t
+                                    t-set="_link_class"
+                                    t-value="'nav-link font-weight-bold'"
+                                />
+                            </t>
+                            <t t-call="portal.user_dropdown">
+                                <t t-set="_user_name" t-value="true" />
+                                <t
+                                    t-set="_item_class"
+                                    t-value="'nav-item dropdown ml-lg-auto'"
+                                />
+                                <t
+                                    t-set="_link_class"
+                                    t-value="'nav-link font-weight-bold'"
+                                />
+                            </t>
+                        </ul>
+                    </div>
+                    <t t-call="website.placeholder_header_language_selector">
+                        <t t-set="_div_classes" t-value="'ml-2'" />
+                    </t>
+                    <div class="oe_structure" id="oe_structure_header_default_1" />
+                </div>
+            </nav>
+        </xpath>
+    </template>
+
+
+</odoo>

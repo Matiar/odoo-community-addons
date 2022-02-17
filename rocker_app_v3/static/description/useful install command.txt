@@ -1,0 +1,119 @@
+sudo apt update
+sudo apt -y upgrade
+
+sudo reboot
+
+sudo apt install postgresql postgresql-client
+
+# installed ubuntu with user odoo :-)
+cd /home/odoo		
+
+wget -O - https://nightly.odoo.com/odoo.key | sudo apt-key add -
+echo "deb http://nightly.odoo.com/12.0/nightly/deb/ ./" | sudo tee /etc/apt/sources.list.d/odoo.list
+
+wget -O - https://nightly.odoo.com/odoo.key | sudo apt-key add -
+echo "deb http://nightly.odoo.com/13.0/nightly/deb/ ./" | sudo tee /etc/apt/sources.list.d/odoo.list
+
+wget -O - https://nightly.odoo.com/odoo.key | sudo apt-key add -
+echo "deb http://nightly.odoo.com/14.0/nightly/deb/ ./" | sudo tee /etc/apt/sources.list.d/odoo.list
+
+sudo apt update
+sudo apt install odoo
+
+sudo mkdir /var/lib/odoo
+
+systemctl status odoo
+sudo systemctl enable --now odoo
+
+sudo reboot
+
+# odoo addons
+cd /usr/lib/python3/dist-packages/odoo/addons
+sudo mkdir rocker_app_v3
+# maybe something else than 777 but
+sudo chmod 777 rocker_app_v3 
+
+# odoo log
+cd /var/log/odoo
+# odoo conf
+cd /etc/odoo
+
+
+cd /home/odoo
+sudo apt install python3-pip
+sudo pip3 install openpyxl
+sudo pip3 install pandas
+sudo pip3 install python-pptx
+
+# missing from odoo
+sudo pip3 install num2words 
+
+
+# start odoo, create database, name = odoo
+# install note module
+# and then add reporting user rocker
+sudo -u postgres createuser --login --pwprompt rocker
+
+#login with user odoo
+psql
+# GRANT CONNECT ON DATABASEp database_name TO username;
+# GRANT SELECT ON ALL TABLES IN SCHEMA name TO username;
+# odoo installation, dbname was odoo
+GRANT CONNECT ON DATABASE odoo TO rocker;
+GRANT SELECT ON ALL TABLES IN SCHEMA "public" TO rocker;
+
+service odoo restart
+
+
+#### ORACLE ###
+https://gist.github.com/kimus/10012910
+
+sudo apt-get install build-essential unzip python-dev libaio-dev
+
+export ORACLE_HOME=/home/odoo/instantclient_21_1
+
+cd $ORACLE_HOME
+ln -s libclntsh.so.21.1   libclntsh.so  #the version number on your .so file might be different
+
+
+export ORACLE_HOME=/home/odoo/instantclient_21_1
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ORACLE_HOME
+source ~/.bashrc
+
+sudo nano /etc/ld.so.conf.d/oracle.conf
+add row:
+/home/odoo/instantclient_21_1
+
+sudo ldconfig
+
+sudo pip3 install cx_oracle
+sqlplus system@192.168.1.88/xe
+
+
+#### WINDOWS Python packages #############
+cmd as administrator
+
+cd C:\Program Files (x86)\Odoo 13.0\python\Scripts
+"C:\Program Files (x86)\Odoo 13.0\python\python" pip3.exe install openpyxl
+"C:\Program Files (x86)\Odoo 13.0\python\python" pip3.exe install pandas
+
+
+#### SQLServer ######
+
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+
+
+curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list | sudo tee /etc/apt/sources.list.d/msprod.list
+sudo apt-get update 
+sudo apt-get install mssql-tools unixodbc-dev
+
+echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
+echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+source ~/.bashrc
+
+#### MySQL & MAriaDB #############
+sudo apt-get update
+sudo apt-get install mysql-client
+pip3 install mysql-connector
+mysql -u root -p -h 127.0.0.1
+mysql -u root -p -h 192.168.1.88

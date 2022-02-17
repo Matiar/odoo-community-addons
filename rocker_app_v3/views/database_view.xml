@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_form_rocker_database" model="ir.ui.view">
+            <field name="name">rocker.database</field>
+            <field name="model">rocker.database</field>
+            <field name="arch" type="xml">
+            <form string="Databases">
+                    <header>
+                         <button type="object" string="Test connection" name="testconnection" confirm="Test connection?"/>
+                    </header>
+                    <group>
+                        <field name="name"/>
+                        <field name="driver"/>
+                        <field name="host"/>
+                        <field name="port" attrs="{'invisible':[('driver', 'in',('sqlserver','odbc'))]}"/>
+                        <field name="odbcdriver" placeholder="example: SQL Server" attrs="{'invisible':[('driver', 'not in',('sqlserver','odbc'))]}"/>
+                        <field name="database"/>
+                        <field name="user"/>
+                        <field name="password"  password="True"/>
+                    </group>
+                </form>
+            </field>
+    </record>
+    
+   <record id="view_tree_rocker_database" model="ir.ui.view">
+            <field name="name">rocker.database</field>
+            <field name="model">rocker.database</field>
+            <field name="arch" type="xml">
+                <tree>
+                        <field name="name"/>
+                        <field name="driver"/>
+                        <field name="host"/>
+                        <field name="port"/>
+                        <field name="database"/>
+                        <field name="user"/>
+                </tree>
+            </field>
+    </record>
+
+
+</odoo>

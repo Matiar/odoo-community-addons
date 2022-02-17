@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_form_report" model="ir.ui.view">
+        <field name="name">rocker.report.form</field>
+        <field name="model">rocker.report</field>
+        <field name="arch" type="xml">
+            <form string="Rocker Report">
+                <header>
+                    <button type="object" string="Execute" name="export_report" confirm="Execute report immediately?"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
+                                attrs="{'invisible': [('active', '=', True)]}"/>
+                        <field name="active" invisible="1"/>
+                    </div>
+                    <div class="oe_title">
+                        <label class="oe_edit_only" for="name" string="Report Name"/>
+                        <h1>
+                            <field name="name" placeholder="New report"/>
+                        </h1>
+                    </div>
+                    <group col="4">
+                        <h3>
+                            <field name="report_application" colspan="2"/>
+                        </h3>
+                        <p></p>
+                    </group>
+                    <group col="6">
+                        <label for="report_type" string="Report type"></label>
+                        <h3>
+                            <field name="report_type" colspan="2"/>
+                        </h3>
+                        <field name="author_id" colspan="2"/>
+                        <field name="date_published" colspan="2"/>
+                        <field name="description" colspan="6"/>
+                    </group>
+                    <notebook colspan="6">
+                        <page string="Report">
+                            <group col="6" attrs="{'invisible':[('report_type', '!=', 'collection')]}">
+                                <field name="report_ids" attrs="{'invisible':[('report_type', '!=', 'collection')]}"
+                                       colspan="6" options="{'no_show':True,'no_create':True,'no_open':True}">
+                                    <tree string="Reports" editable="bottom">
+                                        <field name="sequence" widget="handle"/>
+                                        <field name="name" readonly="1"/>
+                                        <field name="report_application" readonly="1" invisible="1"/>
+                                        <field name="description" readonly="1"/>
+                                        <field name="database" readonly="1"/>
+                                        <field name="sheet_name" readonly="1"
+                                               attrs="{'invisible':[('report_application','!=','excel')]}"/>
+                                        <field name="date_published" readonly="1"/>
+                                        <field name="author_id" readonly="1"/>
+                                    </tree>
+                                </field>
+                            </group>
+                            <group col="6">
+                                <field name="database" colspan="6"
+                                       attrs="{'invisible':[('report_type', '!=', 'single')],'required':[('report_type','=','single')]}"/>
+                                <field name="select_clause" colspan="6"
+                                       attrs="{'invisible':[('report_type', '!=', 'single')]}"/>
+                                <field name="column_headings" colspan="6"
+                                       attrs="{'invisible':[('report_type','!=','single')]}"/>
+                                <field name="file_name" colspan="2"/>
+                                <field name="report_template" string="Template Filename" widget="binary"
+                                       filename="template_name" colspan="2"/>
+                                <field name="store_history" readonly="0" colspan="2"/>
+                                <field name="template_name" invisible="1"/>
+                            </group>
+                            <group col="6" attrs="{'invisible':[('report_type','!=','collection')]}">
+                                <group col="6" colspan="6"
+                                       attrs="{'invisible':[('report_application','!=','powerpoint')]}">
+                                    <field name="elements_per_slide" style="width: 20%%" colspan="6"
+                                           attrs="{'invisible':['|',('report_type','=','single'),('report_application','!=','powerpoint')]}"/>
+                                </group>
+                            </group>
+                            <group col="6" attrs="{'invisible':[('report_type','!=','single')]}">
+                                <field name="sheet_name" style="width: 20%%" colspan="6"
+                                       attrs="{'invisible':['|',('report_type','!=','single'),('report_application','!=','excel')]}"/>
+                                <field name="slide_title" colspan="2"
+                                       attrs="{'invisible':[('report_application','!=','powerpoint')]}"/>
+                                <field name="element" colspan="2"
+                                       attrs="{'invisible':['|',('report_type','!=','single'),('report_application','!=','powerpoint')]}"/>
+                                <field name="chart_type" colspan="2"
+                                       attrs="{'invisible':['|',('report_type','!=','single'),('element','!=','chart')]}"/>
+                                <field name="legend" colspan="2"
+                                       attrs="{'invisible':['|',('report_type','!=','single'),('element','!=','chart')]}"/>
+                                <field name="show_values" colspan="2"
+                                       attrs="{'invisible':['|',('report_type','!=','single'),('element','!=','chart')]}"/>
+                            </group>
+                            <group col="4" attrs="{'invisible':[('report', '=', False)]}">
+                                <field name="report" colspan="2" widget="binary" readonly="1" filename="file_name"/>
+                                <field name="date_executed" colspan="2" readonly="1"/>
+                                <field name="perma_link" readonly="1" colspan="2" widget="url" text="Latest Report"/>
+                                <field name="execute_link" readonly="1" colspan="2" widget="url"
+                                       text="Execute and Download Report"/>
+                            </group>
+                        </page>
+                        <page string="Scheduling">
+                            <group col="3">
+                                <field name="schedule_onoff"/>
+                                <p></p>
+                                <label for="interval_number" string="Execute Every"/>
+                                <div>
+                                    <field name="interval_number" style="width: 10%%; margin-right: 10px;"
+                                           class="oe_inline" default="10"/>
+                                    <field name="interval_type" class="oe_inline" default="min"/>
+                                    <p></p>
+                                </div>
+                                <field name="execute_at" widget="float_time" style="width: 10%%"/>
+                                <p></p>
+                                <field name="firstcall" style="width: 40%%"/>
+                                <field name="nextcall" readonly="1"/>
+                            </group>
+                            <group col="2">
+                                <field name="send_by_email" attrs="{'invisible':[('schedule_onoff', '=', False) ]}"/>
+                                <field name="email_subject"
+                                       attrs="{'invisible':['|',('send_by_email', '=', False), ('schedule_onoff', '=', False) ]}"/>
+                                <field name="email_to"
+                                       attrs="{'invisible':['|',('send_by_email', '=', False), ('schedule_onoff', '=', False) ]}"/>
+                                <field name="email_body"
+                                       attrs="{'invisible':['|',('send_by_email', '=', False), ('schedule_onoff', '=', False) ]}"/>
+                            </group>
+                        </page>
+                        <page string="Access rights">
+                            <group col="2">
+                                <field name="company_id"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="view_tree_report" model="ir.ui.view">
+        <field name="name">rocker.report.list</field>
+        <field name="model">rocker.report</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="report_application"/>
+                <field name="description"/>
+                <field name="database"/>
+                <field name="author_id"/>
+                <field name="date_published"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="view_search_report" model="ir.ui.view">
+        <field name="name">rocker.report.filter</field>
+        <field name="model">rocker.report</field>
+        <field name="arch" type="xml">
+            <search string="report_filter">
+                <field name="name"/>
+                 <field name="report_application"/>
+                <field name="description"/>
+                <field name="database"/>
+               <filter name="filter_inactive"
+                        string="Inactive"
+                        domain="[('active','=',False)]"/>
+                <filter name="filter_active"
+                        string="Active"
+                        domain="[('active','=',True)]"/>
+                <separator/>
+                <filter name="single_reports"
+                        string="Single Reports"
+                        domain="[('report_type','=','single')]"/>
+                <filter name="collection_reports"
+                        string="Collection Reports"
+                        domain="[('report_type','=','collection')]"/>
+                <group expand="0" string="Group By...">
+                    <filter name="type_group" string="Group by Report type"
+                            domain="[]" context="{'group_by':'report_type'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+
+</odoo>

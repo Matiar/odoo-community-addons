@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<odoo>
+  <record id="module_rocker_category" model="ir.module.category">
+    <field name="name">Rocker</field>
+  </record>
+
+  <!-- Rocker User Group -->
+  <record id="rocker_group_user" model="res.groups">
+    <field name="name">Rocker User</field>
+    <field name="category_id"
+           ref="module_rocker_category"/>
+    <field name="implied_ids"
+           eval="[(4, ref('base.group_user'))]"/>
+  </record>
+
+  <!-- Rocker Manager Group -->
+  <record id="rocker_group_manager" model="res.groups">
+    <field name="name">Rocker Manager</field>
+    <field name="category_id"
+           ref="module_rocker_category"/>
+    <field name="implied_ids"
+           eval="[(4, ref('rocker_group_user'))]"/>
+    <field name="users"
+           eval="[(4, ref('base.user_root')),
+                  (4, ref('base.user_admin'))]"/>
+  </record>
+
+     <!-- record access rules -->
+    <record id="rocker_report_user_rule" model="ir.rule">
+      <field name="name">Rocker Reports record rule for users</field>
+      <field name="model_id" ref="model_rocker_report"/>
+      <field name="groups"
+             eval="[(4, ref('rocker_app_v3.rocker_group_user'))]"/>
+      <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+    </record>
+    <record id="rocker_report_manager_rule" model="ir.rule">
+      <field name="name">Rocker Reports record rule for managers</field>
+      <field name="model_id" ref="model_rocker_report"/>
+      <field name="groups"
+             eval="[(4, ref('rocker_app_v3.rocker_group_manager'))]"/>
+      <field name="domain_force">[(1,'=',1)]</field>
+    </record>
+
+
+</odoo>

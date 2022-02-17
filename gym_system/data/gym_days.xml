@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   <data >
+       <record id="day1" model="gym.weekdays">
+           <field name="code">0</field>
+           <field name="day">Sunday</field>
+       </record>
+       <record id="day2" model="gym.weekdays">
+           <field name="code">1</field>
+           <field name="day">Monnday</field>
+       </record>
+       <record id="day3" model="gym.weekdays">
+           <field name="code">2</field>
+           <field name="day">Tuesday</field>
+       </record>
+       <record id="day4" model="gym.weekdays">
+           <field name="code">3</field>
+           <field name="day">Wednesday</field>
+       </record>
+       <record id="day5" model="gym.weekdays">
+           <field name="code">4</field>
+           <field name="day">Thursday</field>
+       </record>
+       <record id="day6" model="gym.weekdays">
+           <field name="code">5</field>
+           <field name="day">Friday</field>
+       </record>
+       <record id="day7" model="gym.weekdays">
+           <field name="code">6</field>
+           <field name="day">Saturday</field>
+       </record>
+   </data>
+</odoo>

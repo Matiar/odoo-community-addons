@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="view_attachment_form_inherit">
+            <field name="name">view.attachment.form.inherit</field>
+            <field name="model">ir.attachment</field>
+            <field name="inherit_id" ref="base.view_attachment_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='mimetype']" position='after'>
+                    <field name="size" groups="base.group_no_one" />
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_attachment_tree_inherit">
+            <field name="name">view.attachment.tree.inherit</field>
+            <field name="model">ir.attachment</field>
+            <field name="inherit_id" ref="base.view_attachment_tree" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='type']" position='after'>
+                    <field name="size" />
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

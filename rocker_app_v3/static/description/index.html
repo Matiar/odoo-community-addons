@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Odoo Rocker Reporting V3</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Rocker Reporting V3</h1>
+        <h2>for Odoo / Linux, Unix & Windows platforms</h2>
+        <h3>Odoo 12.0 & Odoo 13.0 & Odoo 14 & Odoo 15</h3>
+        Collect data to Excel or Powerpoint from various data sources, Present business data with Powerpoint graphs.
+        Or use Excel templates to present business graphs.
+        Get data from Odoo & external PostgreSQL, SQLServer, MySQL, MariaDB, ODBC or Oracle databases. Send reports by
+        email.
+        <p>
+        <h2>Requirements:</h2>
+        <ol>
+            <li>Odoo 12 or Odoo 13 or Odoo 14 or Odoo 15 installed</li>
+            <li>Support Linux, Unix & Windows servers</li>
+            <li>Does not need Excel or PowerPoint installed on server</li>
+            <li>Openpyxl, Python-PPTX & Pandas python packages installed on server</li>
+            <li>Datasource drivers (PostgreSQL, SQLServer, Oracle, MySQL, MariaDB etc.) installed on server based on
+                your
+                needs</li>
+        </ol>
+
+        <h2>News/Notes:</h2>
+        <ul>
+            <li><b>3.2.2021</b>
+                <br>
+                Fixed access rules
+            </li>
+            <li><b>3.2.2021</b>
+                <br>
+                Fixed some deprecated tags
+            </li>
+            <li><b>2.2.2021</b>
+                <br>
+                Can't have 2 modules with same technical name in Odoo Apps. Renamed <br>
+                rocker_app --> rocker_app_v3<br>Easier to install
+            </li>
+            <li><b>22.1.2021</b>
+                <br>
+                Rocker can be installed on Linux Odoo. Excel are created with the help of Openpyxl, Powerpoints with
+                Python-pptx packages.
+                <br> Does not support Excel 2016 PowerPivot but Excel 2016 or Office365 can be used for opening/viewwing
+                reports.
+                <br> Charts can not base on Excel Tables but Rocker creates dynamic ranges for creating charts on
+                Sheets.
+            </li>
+            <p>
+                <li><b>22.1.2021</b>
+                    <br>
+                    Odoo for Windows & Win32Api version of Rocker can be found from separate <b><a
+                            href="https://apps.odoo.com/apps/modules/13.0/rocker_app_v3/">repository</a></b>. This
+                    version uses openpyxl & python-pptx python packages
+                    <br>
+                </li>
+            <p>
+                <li><b>25.3.2020</b>
+                    <br>
+                    Send reports by Email.
+                    When scheduled report is ready then it can be sent by email. Also fixed some scheduler issues.
+                </li>
+            <p>
+                <li><b>19.3.2020</b>
+                    <br>
+                    With V2 you can create Powerpoints.
+                    Download newest version, install python-pptx on the server and that's it!
+                    Watch the demo: <strong><a href="https://www.youtube.com/watch?v=xGtZNKU_WaI">Powerpoint demo on
+                            Youtube</a></strong>
+                </li>
+            <p>
+                <li><b>24.2.2020</b>
+                    <br>Did you create nice report that takes data from Odoo or other well known Application?<br>
+                    Why don't you share it with others. Upload your Excel template, SQL & screendump to
+                    <b><a href="https://github.com/akarki58/rocker_templates">Rocker_Templates repository</a></b>
+                    <p>Author contact: antti.rocker.karki@outlook.com</p>
+                </li>
+        </ul>
+        <p>
+        <h2>Guides:</h2>
+        Guides in zip/rocker_app_v3_static/description -folder
+        <ol>
+            <li>
+                <strong><a
+                        href="http://github.com/akarki58/rocker_app_v3_2021/blob/14.0/rocker_app_v3_V3/static/description/Rocker_Excel_Charts_Pivots_User_Guide.pptx?raw=true">
+                        Excel Charts/Pivots User Guide</a></strong>
+            </li>
+            <li>
+                <strong><a
+                        href="http://github.com/akarki58/rocker_app_v3_2021/blob/14.0/rocker_app_v3_V3/static/description/Rocker_Email_User_Guide.pptx?raw=true">Email
+                        User Guide</a></strong>
+            </li>
+            <li>
+                <strong><a
+                        href="http://github.com/akarki58/rocker_app_v3_2021/blob/14.0/rocker_app_v3_V3/static/description/Rocker_PowerPoint_User_Guide.pptx?raw=true">Powerpoint
+                        User Guide</a></strong>
+            </li>
+            <li>
+                <strong><a
+                        href="http://github.com/akarki58/rocker_app_v3_2021/blob/14.0/rocker_app_v3_V3/static/description/Rocker_install.pptx?raw=true">Install
+                        Guide</a></strong>
+            </li>
+        </ol>
+        <p>
+        <h2>Examples:</h2>
+        <ol>
+            <li>
+                <strong>Powerpoints: Powerpoint table slide</strong><br><br>
+                <img class="img-fluid" src="Table.png" />
+            </li>
+            <br>
+            <li>
+                <strong>Powerpoints: Powerpoint Column Chart slide</strong><br><br>
+                <img class="img-fluid" src="ColumnChart.png" />
+            </li>
+            <br>
+            <li>
+                <strong>Powerpoints: Powerpoint Pie Chart slide</strong><br><br>
+                <img class="img-fluid" src="Pie.png" />
+            </li>
+            <br>
+            <li>
+                <strong>Powerpoints: Powerpoint Collection</strong><br><br>
+                <img class="img-fluid" src="Collection.png" />
+            </li>
+            <br>
+            <li>
+                <strong>Rocker Excel example: Data from single datasource</strong><br><br>
+                <img class="img-fluid" src="RockerUI.png" />
+            </li>
+            <br>
+            <li>
+                <strong>Rocker Excel example: Collection reports, data from many datasources</strong><br><br>
+                <img class="img-fluid" src="RockerUI2.png" />
+            </li>
+        </ol>
+        <h2>Demos:</h2>
+        <ol>
+            <li>
+                <strong><a href="https://www.youtube.com/watch?v=xGtZNKU_WaI">View Powerpoint demo</a></strong><br><br>
+            </li>
+            <br>
+            <li>
+                <strong><a href="https://www.youtube.com/watch?v=ctxz7aIIFaA">View Basic demo</a></strong><br><br>
+            </li>
+            <br>
+            <li>
+                <strong><a href="https://www.youtube.com/watch?v=4rycsBdr9B4">Get data from SQLServer
+                        demo</a></strong><br><br>
+            </li>
+            <br>
+            <li>
+                <strong><a href="https://www.youtube.com/watch?v=1fDRUVlbJog">Collection Reports demo, get data from
+                        many data sources</a></strong><br><br>
+            </li>
+            <br>
+            <li>
+                <strong><a href="https://www.youtube.com/watch?v=3dXya4XU6sw">Access rights demo</a></strong><br><br>
+            </li>
+            <br>
+            <li>
+                <strong><a href="https://www.youtube.com/watch?v=XLDj9r4a3uE">Hyperlinks demo</a></strong><br><br>
+            </li>
+            <br>
+            <li>
+                <strong><a href="https://www.youtube.com/watch?v=Qwvjkg3jZQs">Scheduler demo</a></strong><br><br>
+            </li>
+        </ol>
+    </div>
+</body>
+
+</html>

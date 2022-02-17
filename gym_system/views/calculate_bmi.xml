@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record model="ir.ui.view" id="gym_nutrition_bmi">
+            <field name="name">BMI</field>
+            <field name="model">gym.bim</field>
+            <field name="arch" type="xml">
+                <form string="gym bmi form">
+                <sheet>
+                        <group>
+                            <group>
+                                <field name="height"/>
+                                <field name="weight"/>
+                                <field name="bmi"/>
+                            </group>
+                        </group>
+                </sheet>
+                </form>
+            </field>
+        </record>
+         <record model="ir.ui.view" id="gym_bmi_tree">
+            <field name="name">BMI tree</field>
+            <field name="model">gym.bim</field>
+            <field name="arch" type="xml">
+                <tree string="bmi list">
+                            <field name="height"/>
+                            <field name="weight"/>
+                            <field name="bmi"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="bmi_action">
+            <field name="name">Your Bmi</field>
+            <field name="res_model">gym.bim</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+      <menuitem id="bmi_nutrition_id" name="BMI Calculation" parent="nutrition_menu_id" action="bmi_action"/>
+        
+       
+    </data>
+</odoo>        

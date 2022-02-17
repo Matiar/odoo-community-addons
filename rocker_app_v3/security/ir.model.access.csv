@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_report_user,Rocker Report User Access,model_rocker_report,rocker_group_user,1,0,0,0
+access_archive_user,Rocker Report Archive User Access,model_rocker_archive,rocker_group_user,1,0,0,0
+access_database_user,Rocker Database User Access,model_rocker_database,rocker_group_user,1,0,0,0
+access_collection_user,Rocker Collection User Access model,model_rocker_report_collection,rocker_group_user,1,0,0,0
+access_popup_user,Rocker Popup User Access model,model_rocker_popup_wizard,rocker_group_user,1,0,0,0
+access_about_user,Rocker About User Access model,model_rocker_about,rocker_group_user,1,1,1,0
+
+access_report_manager,Rocker Report Manager Access,model_rocker_report,rocker_group_manager,1,1,1,1
+access_database_manager,Rocker Database Manager Access,model_rocker_database,rocker_group_manager,1,1,1,1
+access_archive_manager,Rocker Archive Manager Access,model_rocker_archive,rocker_group_manager,1,1,1,1
+access_collection_manager,Rocker Collection Manager Access model,model_rocker_report_collection,rocker_group_manager,1,1,1,1

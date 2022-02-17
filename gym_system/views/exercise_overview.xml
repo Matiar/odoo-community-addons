@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record model="ir.ui.view" id="gym_exercise_category">
+            <field name="name">exercise category</field>
+            <field name="model">exercise.category</field>
+            <field name="arch" type="xml">
+            <form string="gym exercise category form">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="exercise_id" widget = "selection" required="1"/>
+                                <field name="exercise_category_id" domain="[('body_parts_id', '=', exercise_id)]" required="1"/>
+                                <field name="equipment_id" widget = "many2many_list" required="1"/>
+                                <field name="description"/>
+                                <field name="muscles_id" required="1"/>
+                                <field name="image" widget="image" hieght="150px" width="200px"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="gym_exercise_category_tree">
+            <field name="name">exercise category tree</field>
+            <field name="model">exercise.category</field>
+            <field name="arch" type="xml">
+                <tree string="exercise category list">
+                    <field name="exercise_category_id"/>
+                    <field name="exercise_id"/>
+                    <field name="equipment_id"/>
+                    <field name="description"/>
+                    <field name="muscles_id"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="exercise_category_action">
+            <field name="name">Exercise Category</field>
+            <field name="res_model">exercise.category</field>
+
+            <field name="view_mode">tree,form</field>
+        </record>
+
+       
+        <menuitem id="exercise_category_id" name="Exercise Overview" parent="exercise_menu_id" action="exercise_category_action" sequence="4"/>
+        
+        
+       
+    </data>
+</odoo>        

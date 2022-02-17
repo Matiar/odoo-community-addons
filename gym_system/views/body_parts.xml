@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record model="ir.ui.view" id="gym_exercise">
+            <field name="name">Body Parts</field>
+            <field name="model">exercise.select</field>
+            <field name="arch" type="xml">
+            <form string="Body Parts form">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+         <record model="ir.ui.view" id="gym_exercise_tree">
+            <field name="name">Body Parts</field>
+            <field name="model">exercise.select</field>
+            <field name="arch" type="xml">
+                <tree string="Body Parts list">
+                        <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="exercise_action">
+            <field name="name">Body Parts</field>
+            <field name="res_model">exercise.select</field>
+
+            <field name="view_mode">tree,form</field>
+        </record>
+       
+        <menuitem id="exercise_menu_id" name="Exercise" parent="configuration_menu_id"/> 
+        <menuitem id="Body_parts_id" name="Body Parts" parent="exercise_menu_id" action="exercise_action" sequence="1" groups = "gym_officer,gym_manager"/>
+        
+        
+       
+    </data>
+</odoo>        

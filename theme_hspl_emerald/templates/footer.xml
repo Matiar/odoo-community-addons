@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="theme_footer" inherit_id="website.footer_custom">
+        <xpath expr="//div[@id='footer']" position="replace">
+            <div id="footer" class="oe_structure oe_structure_solo">
+                <section class="s_text_block pt64 pb32">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-12">
+                                <div class="footer-widget">
+                                    <!-- Brand -->
+                                    <a href="/" class="logo">
+                                        <span
+                                            t-field="website.logo"
+                                            class=""
+                                            t-options="{'widget': 'image'}"
+                                            role="img"
+                                            t-att-aria-label="'Logo of %s' % website.name"
+                                            t-att-title="website.name"
+                                        />
+                                    </a>
+                                    <p
+                                    >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua.
+                                    </p>
+
+                                    <div>
+                                        <t t-call="website.language_selector" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 ml-lg-auto col-sm-12">
+                                <div class="footer-widget">
+                                    <h3>Account</h3>
+                                    <!-- Links -->
+                                    <ul class="footer-links ">
+                                        <li>
+                                            <a href="#">
+                                                Terms and conditions
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Privacy policy
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Affiliate services
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Help and support
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Frequently Asked Question
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-6">
+                                <div class="footer-widget">
+                                    <h3>About</h3>
+                                    <!-- Links -->
+                                    <ul class="footer-links ">
+                                        <li>
+                                            <a href="#">
+                                                Services
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                About Us
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Pricing
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Products Shop
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">
+                                                Contact
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-6">
+                                <div class="footer-widget">
+                                    <h3>Socials</h3>
+                                    <!-- Links -->
+                                    <ul class="list-unstyled footer-links">
+                                        <li t-if="website.social_facebook">
+                                            <a
+                                                t-att-href="website.social_facebook"
+                                                target="_blank"
+                                                class="btn btn-sm btn-link"
+                                            >
+                                                <span
+                                                    class="fa fa-facebook-square"
+                                                />Facebook
+                                            </a>
+                                        </li>
+                                        <li t-if="website.social_twitter">
+                                            <a
+                                                t-att-href="website.social_twitter"
+                                                target="_blank"
+                                                class="btn btn-sm btn-link"
+                                            >
+                                                <span class="fa fa-twitter" />Twitter
+                                            </a>
+                                        </li>
+                                        <li t-if="website.social_linkedin">
+                                            <a
+                                                t-att-href="website.social_linkedin"
+                                                target="_blank"
+                                                class="btn btn-sm btn-link"
+                                            >
+                                                <span class="fa fa-linkedin" />Linkedin
+                                            </a>
+                                        </li>
+                                        <li t-if="website.social_youtube">
+                                            <a
+                                                t-att-href="website.social_youtube"
+                                                target="_blank"
+                                                class="btn btn-sm btn-link"
+                                            >
+                                                <span
+                                                    class="fa fa-youtube-play"
+                                                />Youtube
+                                            </a>
+                                        </li>
+                                        <li t-if="website.social_github">
+                                            <a
+                                                t-att-href="website.social_github"
+                                                target="_blank"
+                                                class="btn btn-sm btn-link"
+                                            >
+                                                <span class="fa fa-github" />Github
+                                            </a>
+                                        </li>
+                                        <li t-if="website.social_instagram">
+                                            <a
+                                                t-att-href="website.social_instagram"
+                                                target="_blank"
+                                                class="btn btn-sm btn-link"
+                                            >
+                                                <span
+                                                    class="fa fa-instagram"
+                                                />Instagram
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!--  Page Scroll to Top  -->
+
+            <a class="scroll-to-top js-scroll-trigger" href="#top">
+                <i class="fa fa-angle-up" />
+            </a>
+            <section class="py-2">
+                <div class="container">
+                    <div class="row text-right pt-5">
+                        <div class="col-lg-12">
+                            <!-- Copyright -->
+                            <p class="footer-copy ">
+                                Copyright &amp;copy; <span
+                                    t-field="res_company.name"
+                                    itemprop="name"
+                                >Company name
+                            </span> All rights reserved.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- / .row -->
+                </div>
+            </section>
+        </xpath>
+    </template>
+    <template id="theme_brand_promotion" inherit_id="website.brand_promotion">
+        <xpath expr="//div[hasclass('o_brand_promotion')]" position="replace" />
+    </template>
+    <template id="theme_frontend_footer" inherit_id="web.frontend_layout">
+        <xpath expr="//div[hasclass('o_footer_copyright')]" position="replace" />
+    </template>
+</odoo>

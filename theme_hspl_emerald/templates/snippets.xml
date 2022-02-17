@@ -1,0 +1,1590 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!--===============All Snippet List================== -->
+    <template id="theme_snippets" inherit_id="website.snippets">
+        <xpath expr="//div[@id='snippet_structure']" position="before">
+            <!--====== All Sliders Style ====== -->
+            <div class="o_panel_header">
+                Theme Snippets
+            </div>
+            <div class="o_panel_body">
+                <t
+                    t-snippet="theme_hspl_emerald.hero_slider"
+                    t-thumbnail="/theme_hspl_emerald/static/src/img/thumbs/hero-slider.png"
+                />
+                <t
+                    t-snippet="theme_hspl_emerald.4col_feature"
+                    t-thumbnail="/theme_hspl_emerald/static/src/img/thumbs/4col-feature.png"
+                />
+                <t
+                    t-snippet="theme_hspl_emerald.service_style_1"
+                    t-thumbnail="/theme_hspl_emerald/static/src/img/thumbs/service-1.png"
+                />
+                <t
+                    t-snippet="theme_hspl_emerald.3_col_working_process"
+                    t-thumbnail="/theme_hspl_emerald/static/src/img/thumbs/working-pro.png"
+                />
+                <t
+                    t-snippet="theme_hspl_emerald.services_style_2"
+                    t-thumbnail="/theme_hspl_emerald/static/src/img/thumbs/service-bg.png"
+                />
+                <t
+                    t-snippet="theme_hspl_emerald.pricing_snippet_1"
+                    t-thumbnail="/theme_hspl_emerald/static/src/img/thumbs/pricing.png"
+                />
+                <t
+                    t-snippet="theme_hspl_emerald.project_wrap"
+                    t-thumbnail="/theme_hspl_emerald/static/src/img/thumbs/project.png"
+                />
+                <t
+                    t-snippet="theme_hspl_emerald.project_section_bottom"
+                    t-thumbnail="/theme_hspl_emerald/static/src/img/thumbs/proj-btm.png"
+                />
+                <t
+                    t-snippet="theme_hspl_emerald.customer_testimonial"
+                    t-thumbnail="/theme_hspl_emerald/static/src/img/thumbs/testimonial.png"
+                />
+                <t
+                    t-snippet="theme_hspl_emerald.static_latest_blog"
+                    t-thumbnail="/theme_hspl_emerald/static/src/img/thumbs/l-blog.png"
+                />
+                <t
+                    t-snippet="theme_hspl_emerald.banner_slider"
+                    t-thumbnail="/theme_hspl_emerald/static/src/img/thumbs/banner-2.png"
+                />
+                <t
+                    t-snippet="theme_hspl_emerald.image_features"
+                    t-thumbnail="/theme_hspl_emerald/static/src/img/thumbs/img-feature.png"
+                />
+                <t
+                    t-snippet="theme_hspl_emerald.service_features"
+                    t-thumbnail="/theme_hspl_emerald/static/src/img/thumbs/service-feature.png"
+                />
+                <t
+                    t-snippet="theme_hspl_emerald.work_portfolio"
+                    t-thumbnail="/theme_hspl_emerald/static/src/img/thumbs/portfolio.png"
+                />
+                <t
+                    t-snippet="theme_hspl_emerald.banner_slider_2"
+                    t-thumbnail="/theme_hspl_emerald/static/src/img/thumbs/banner-3.png"
+                />
+                <t
+                    t-snippet="theme_hspl_emerald.banner_slider_3"
+                    t-thumbnail="/theme_hspl_emerald/static/src/img/thumbs/banner-4.png"
+                />
+                <t
+                    t-snippet="theme_hspl_emerald.page_banner"
+                    t-thumbnail="/theme_hspl_emerald/static/src/img/thumbs/page-banner.png"
+                />
+                <t
+                    t-snippet="theme_hspl_emerald.single_project"
+                    t-thumbnail="/theme_hspl_emerald/static/src/img/thumbs/proj-single.png"
+                />
+                <t
+                    t-snippet="theme_hspl_emerald.list_with_image"
+                    t-thumbnail="/theme_hspl_emerald/static/src/img/thumbs/list-img.png"
+                />
+
+            </div>
+        </xpath>
+    </template>
+    <template id="hero_slider" name="Hero Slider">
+        <section
+            id="myCarousel"
+            class="s_carousel s_carousel_default carousel slide"
+            data-interval="10000"
+        >
+            <!-- Content -->
+            <div class="carousel-inner">
+
+                <div class="carousel-item banner-area py-7 active" data-name="Slide 1">
+                    <!-- Content -->
+                    <div class="container">
+                        <div class="row  align-items-center">
+                            <div class="col-md-12 col-lg-7 text-center text-lg-left">
+                                <div class="main-banner">
+                                    <!-- Heading -->
+                                    <h1 class="display-4 mb-4 font-weight-normal">
+                                        Industry Leading Managed Services Solutions
+                                    </h1>
+
+                                    <!-- Subheading -->
+                                    <p class="lead mb-4">
+                                        Emerald is set of landing and support pages aimed at helping companies promote
+                                        new products and business launches.
+                                    </p>
+
+                                    <!-- Button -->
+                                    <p class="mb-0">
+                                        <a
+                                            href="#"
+                                            target="_blank"
+                                            class="btn btn-primary btn-circled"
+                                        >
+                                            Purchase now
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-5 d-none d-lg-block">
+                                <div class="banner-img-block">
+                                    <img
+                                        src="/theme_hspl_emerald/static/src/img/banner-img-5.png"
+                                        alt="banner-img"
+                                        class="img-fluid"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- / .row -->
+                    </div>
+                    <!-- / .container -->
+                </div>
+
+            </div>
+        </section>
+    </template>
+    <template id="4col_feature" name="4 Column Features">
+        <section class="section bg-grey" id="feature">
+            <div class="container">
+                <div class="row justy-content-center">
+                    <div class="col-lg-3 col-sm-6 col-md-6">
+                        <div class="text-center feature-block">
+                            <div class="img-icon-block mb-4">
+                                <span class="fa fa-thumbs-o-up fa-4x" />
+                            </div>
+                            <h4 class="mb-2">The right advice</h4>
+                            <p
+                            >Our team are experts in matching you with the right provider.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6 col-md-6">
+                        <div class="text-center feature-block">
+                            <div class="img-icon-block mb-4">
+                                <span class="fa fa-trophy fa-4x" />
+                            </div>
+                            <h4 class="mb-2">Recognised for excellence</h4>
+                            <p
+                            >We've been awarded for our high rate of customer satisfaction.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6 col-md-6">
+                        <div class="text-center feature-block">
+                            <div class="img-icon-block mb-4">
+                                <span class="fa fa-balance-scale fa-4x" />
+                            </div>
+                            <h4 class="mb-2">Compare the best</h4>
+                            <p
+                            >We only compare market leaders with a reputation for service quality.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6 col-md-6">
+                        <div class="text-center feature-block">
+                            <div class="img-icon-block mb-4">
+                                <span class="fa fa-tachometer fa-4x" />
+                            </div>
+                            <h4 class="mb-2">Premium Services</h4>
+                            <p
+                            >We only compare market leaders with a reputation for service quality.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- / .container -->
+        </section>
+    </template>
+    <template id="service_style_1" name="Service 1">
+        <!-- SERVICE-1
+================================================== -->
+        <section class="bg-grey" id="service">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-lg-4">
+                        <div class="service-img">
+                            <img
+                                src="/theme_hspl_emerald/static/src/img/blog-lg.jpg"
+                                alt=""
+                                class="img-fluid"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 pl-4">
+                        <div class="service-content">
+                            <h2>Get a better deal and start saving money today</h2>
+                            <p
+                            >We compare hundreds of leading products and plans across many categories to bring you the
+                                best value for money.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pt-5 service-wrap">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-lg-8 offset-lg-4">
+                        <div
+                            class="carousel slide "
+                            id="service-carousel"
+                            data-ride="carousel"
+                        >
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="col-lg-12">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="service-block media">
+                                                    <div class="service-icon">
+                                                        <span class="fa fa-globe" />
+                                                    </div>
+                                                    <div
+                                                        class="service-inner-content media-body"
+                                                    >
+                                                        <h4>Backup System</h4>
+                                                        <p
+                                                        >Our team are experts in matching you with the right
+                                                            provider.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="service-block media">
+                                                    <div class="service-icon">
+                                                        <span class="fa fa-cloud " />
+                                                    </div>
+                                                    <div
+                                                        class="service-inner-content media-body"
+                                                    >
+                                                        <h4>Cloud Hosting</h4>
+                                                        <p
+                                                        >Our team are experts in matching you with the right
+                                                            provider.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="col-lg-12">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="service-block media">
+                                                    <div class="service-icon">
+                                                        <span class="fa fa-globe " />
+                                                    </div>
+                                                    <div
+                                                        class="service-inner-content media-body"
+                                                    >
+                                                        <h4>Web hosting</h4>
+                                                        <p
+                                                        >Our team are experts in matching you with the right
+                                                            provider.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="service-block media">
+                                                    <div class="service-icon">
+                                                        <span class="fa fa-server " />
+                                                    </div>
+                                                    <div
+                                                        class="service-inner-content media-body"
+                                                    >
+                                                        <h4>Office Cloud</h4>
+                                                        <p
+                                                        >Our team are experts in matching you with the right
+                                                            provider.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p class="pl-3">Want to know more about this?
+                                    <a href="#">Contact us</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="3_col_working_process" name="3 Column Working Process">
+        <section class="section" id="process">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 text-center">
+                        <div class="section-heading">
+                            <!-- Heading -->
+                            <h2 class="section-title">
+                                Our Working process
+                            </h2>
+
+                            <!-- Subheading -->
+                            <p>
+                                emerald can be used to create anything from a small marketing page to a sophisticated
+                                website.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- / .row -->
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-sm-6 col-md-6">
+                        <div class="process-block">
+                            <img
+                                src="/theme_hspl_emerald/static/src/img/process/process-1.jpg"
+                                alt=""
+                                class="img-fluid"
+                            />
+
+                            <h3>Project Research</h3>
+                            <p
+                            >Nihil facere delectus eaque aut possimus nobis laudantium reprehenderit.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-md-6">
+                        <div class="process-block">
+                            <img
+                                src="/theme_hspl_emerald/static/src/img/process/process-2.jpg"
+                                alt=""
+                                class="img-fluid"
+                            />
+
+                            <h3>Project demostration</h3>
+                            <p
+                            >Nihil facere delectus eaque aut possimus nobis laudantium reprehenderit.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-md-6">
+                        <div class="process-block">
+                            <img
+                                src="/theme_hspl_emerald/static/src/img/process/process-3.jpg"
+                                alt=""
+                                class="img-fluid"
+                            />
+
+                            <h3>Development &amp; delivery</h3>
+                            <p
+                            >Nihil facere delectus eaque aut possimus nobis laudantium reprehenderit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="services_style_2" name="Service 2">
+        <section
+            class="section"
+            id="services-2"
+            style="background: url('/theme_hspl_emerald/static/src/img/bg/6.jpg') no-repeat fixed 50% 50%;"
+        >
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 text-center">
+                        <div class="section-heading">
+                            <!-- Heading -->
+                            <h2 class="section-title mb-2 text-white">
+                                Web Services
+                            </h2>
+
+                            <!-- Subheading -->
+                            <p class="mb-5 text-white">
+                                emerald can be used to create anything from a small marketing page to a sophisticated
+                                website.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- / .row -->
+
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 col-md-6 mb-30">
+                        <div class="web-service-block">
+                            <span class="fa fa-lightbulb-o" />
+                            <h3>Creative Design</h3>
+                            <p
+                            >Afraid we praise lively he suffer family estate is. Ample order up in of in ready. Timed
+                                blind had .
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-md-6 mb-30">
+                        <div class="web-service-block">
+                            <span class="fa fa-desktop" />
+                            <h3>Web Development</h3>
+                            <p
+                            >Afraid we praise lively he suffer family estate is. Ample order up in of in ready. Timed
+                                blind had .
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-md-6 mb-30">
+                        <div class="web-service-block">
+                            <span class="fa fa-bullhorn" />
+                            <h3>Digital Marketing</h3>
+                            <p
+                            >Afraid we praise lively he suffer family estate is. Ample order up in of in ready. Timed
+                                blind had .
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6 col-md-6 ">
+                        <div class="web-service-block">
+                            <span class="fa fa-window-restore" />
+                            <h3>Graphic Design</h3>
+                            <p
+                            >Afraid we praise lively he suffer family estate is. Ample order up in of in ready. Timed
+                                blind had .
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-md-6 ">
+                        <div class="web-service-block">
+                            <span class="fa fa-mobile" />
+                            <h3>App Development</h3>
+                            <p
+                            >Afraid we praise lively he suffer family estate is. Ample order up in of in ready. Timed
+                                blind had .
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-md-6 ">
+                        <div class="web-service-block">
+                            <span class="fa fa-gear" />
+                            <h3>Wordpress Installation</h3>
+                            <p
+                            >Afraid we praise lively he suffer family estate is. Ample order up in of in ready. Timed
+                                blind had .
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </template>
+    <template id="pricing_snippet_1" name="Pricing">
+        <section class="section">
+            <section class="">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 col-lg-6 text-center">
+                            <div class="section-heading">
+                                <!-- Heading -->
+                                <h2 class="section-title">
+                                    Affordable Price Plan
+                                </h2>
+
+                                <!-- Subheading -->
+                                <p>
+                                    emerald can be used to create anything from a small marketing page to a
+                                    sophisticated website.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / .row -->
+
+                </div>
+            </section>
+            <section id="pricing">
+                <!-- Content -->
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-sm-6 col-md-6">
+                            <div class="pricing-box">
+                                <h3>Stnadard</h3>
+                                <div class="price-block">
+                                    <h2><small>$</small>13
+                                        <span>monthly</span>
+                                    </h2>
+                                </div>
+
+                                <ul class="price-features list-unstyled">
+                                    <li>Unlimited Domain</li>
+                                    <li>Unmetered Bandwidth</li>
+                                    <li>Free SSL Certificate</li>
+                                    <li>20 Email Subscription</li>
+                                    <li>SSD Hosting</li>
+                                </ul>
+
+                                <a
+                                    href="#"
+                                    class="btn btn-outline-dark btn-circled"
+                                >Purchase Now</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-md-6">
+                            <div class="pricing-box">
+                                <h3>Premium</h3>
+                                <div class="price-block">
+                                    <h2><small>$</small>23
+                                        <span>monthly</span>
+                                    </h2>
+                                </div>
+
+                                <ul class="price-features list-unstyled">
+                                    <li>Unlimited Domain</li>
+                                    <li>Unmetered Bandwidth</li>
+                                    <li>Free SSL Certificate</li>
+                                    <li>20 Email Subscription</li>
+                                    <li>SSD Hosting</li>
+                                </ul>
+
+                                <a
+                                    href="#"
+                                    class="btn btn-primary btn-circled"
+                                >Purchase Now</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-8 col-md-6">
+                            <div class="pricing-box ">
+                                <h3>Business</h3>
+                                <div class="price-block">
+                                    <h2><small>$</small>33
+                                        <span>monthly</span>
+                                    </h2>
+                                </div>
+
+                                <ul class="price-features list-unstyled">
+                                    <li>Unlimited Domain</li>
+                                    <li>Unmetered Bandwidth</li>
+                                    <li>Free SSL Certificate</li>
+                                    <li>20 Email Subscription</li>
+                                    <li>SSD Hosting</li>
+                                </ul>
+
+                                <a
+                                    href="#"
+                                    class="btn btn-outline-dark btn-circled"
+                                >Purchase Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </template>
+    <template id="project_wrap" name="Project Wrap">
+
+        <section
+            class="section"
+            id="projects-wrap"
+            style=" background: url('/theme_hspl_emerald/static/src/img/bg/banner_bg.jpg') no-repeat;"
+        >
+            <div class="overlay" />
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="section-heading">
+                            <h1
+                                class="text-white"
+                            >We are trying to deliver 100% quality product and success their
+                                business to achieve ultimate goal.
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <p
+                            class="lead text-white"
+                        >We are providing best service since 1990 to present , committed to
+                            best service delivery.Nullam metus enim, placerat in lacus vel, porttitor egestas libero.
+                            Etiam ex risus, feugiat eget accumsan eu, sagittis eu urna. In eget ultrices metus. Nunc
+                            accumsan
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 col-sm-6 mb-5">
+                        <div class="single-project">
+                            <img
+                                src="/theme_hspl_emerald/static/src/img/projects/p-1.jpg"
+                                alt=""
+                                class="img-fluid"
+                            />
+                            <div class="project-content">
+                                <h4>Project: onepage</h4>
+                                <p
+                                >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate eligendi
+                                    consequuntur veniam quod
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 mb-5">
+                        <div class="single-project">
+                            <img
+                                src="/theme_hspl_emerald/static/src/img/projects/p-4.jpg"
+                                alt=""
+                                class="img-fluid"
+                            />
+                            <div class="project-content">
+                                <h4>Project: business</h4>
+                                <p
+                                >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate eligendi
+                                    consequuntur veniam quod
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-8 ">
+                        <div class="single-project">
+                            <img
+                                src="/theme_hspl_emerald/static/src/img/projects/p-3.jpg"
+                                alt=""
+                                class="img-fluid"
+                            />
+                            <div class="project-content">
+                                <h4>Project : Marketing</h4>
+                                <p
+                                >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate eligendi
+                                    consequuntur veniam quod
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="project_section_bottom" name="Project Bottom section">
+        <section class="section-bottom">
+            <div class="container">
+                <div class="row py-4">
+                    <div class="col-lg-7 col-md-12 col-sm-12 ">
+                        <div class="single-project">
+                            <img
+                                src="/theme_hspl_emerald/static/src/img/bg/banner_bg.jpg"
+                                alt=""
+                                class="img-fluid"
+                            />
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 ">
+                        <div class="project-content-block">
+                            <h4>Do you know who we are?</h4>
+                            <h2>More than just service your products...</h2>
+                            <p
+                            >Explain to you how all this mistaken idea of denouncing pleasure and praising pain was
+                                born and we will give you a complete account of the system.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+    <template id="customer_testimonial" name="Testimonial">
+        <section class="section" id="section-testimonial">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 col-sm-12 col-md-12">
+                        <div class="section-heading testimonial-heading">
+                            <h1>What they say<br />about us
+                            </h1>
+                            <p
+                            >Numquam doloribus impedit at consectetur molestiae tempora ratione possimus in veniam
+                                aperiam, eum consequuntur, unde. Earum ullam molestiae suscipit saepe sunt recusandae.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-sm-12 col-md-12">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="test-inner ">
+                                    <div class="test-author-thumb d-flex">
+                                        <img
+                                            src="/theme_hspl_emerald/static/src/img/client/test-1.jpg"
+                                            alt="Testimonial author"
+                                            class="img-fluid"
+                                        />
+                                        <div class="test-author-info">
+                                            <h4>Will Barrow</h4>
+                                            <h6>Sunrise Paradise Hotel</h6>
+                                        </div>
+                                    </div>
+
+                                    Quas ut distinctio tenetur animi nihil rem, amet dolorum totam. Ab repudiandae
+                                    tempore qui fugiat amet ipsa id omnis ipsam, laudantium! Dolorem.
+
+                                    <i class="fa fa-quote-right" />
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="test-inner ">
+                                    <div class="test-author-thumb d-flex">
+                                        <img
+                                            src="/theme_hspl_emerald/static/src/img/client/test-2.jpg"
+                                            alt="Testimonial author"
+                                            class="img-fluid"
+                                        />
+                                        <div class="test-author-info">
+                                            <h4>Will Barrow</h4>
+                                            <h6>Sunrise Paradise Hotel</h6>
+                                        </div>
+                                    </div>
+
+                                    Quas ut distinctio tenetur animi nihil rem, amet dolorum totam. Ab repudiandae
+                                    tempore qui fugiat amet ipsa id omnis ipsam, laudantium! Dolorem.
+
+                                    <i class="fa fa-quote-right" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="test-inner ">
+                                    <div class="test-author-thumb d-flex">
+                                        <img
+                                            src="/theme_hspl_emerald/static/src/img/client/test-3.jpg"
+                                            alt="Testimonial author"
+                                            class="img-fluid"
+                                        />
+                                        <div class="test-author-info">
+                                            <h4>Will Barrow</h4>
+                                            <h6>Sunrise Paradise Hotel</h6>
+                                        </div>
+                                    </div>
+
+                                    Quas ut distinctio tenetur animi nihil rem, amet dolorum totam. Ab repudiandae
+                                    tempore qui fugiat amet ipsa id omnis ipsam, laudantium! Dolorem.
+
+                                    <i class="fa fa-quote-right" />
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="test-inner ">
+                                    <div class="test-author-thumb d-flex">
+                                        <img
+                                            src="/theme_hspl_emerald/static/src/img/client/test-4.jpg"
+                                            alt="Testimonial author"
+                                            class="img-fluid"
+                                        />
+                                        <div class="test-author-info">
+                                            <h4>Will Barrow</h4>
+                                            <h6>Sunrise Paradise Hotel</h6>
+                                        </div>
+                                    </div>
+
+                                    Quas ut distinctio tenetur animi nihil rem, amet dolorum totam. Ab repudiandae
+                                    tempore qui fugiat amet ipsa id omnis ipsam, laudantium! Dolorem.
+
+                                    <i class="fa fa-quote-right" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="test-inner">
+                                    <div class="test-author-thumb d-flex">
+                                        <img
+                                            src="/theme_hspl_emerald/static/src/img/client/test-5.jpg"
+                                            alt="Testimonial author"
+                                            class="img-fluid"
+                                        />
+                                        <div class="test-author-info">
+                                            <h4>Will Barrow</h4>
+                                            <h6>Sunrise Paradise Hotel</h6>
+                                        </div>
+                                    </div>
+
+                                    Quas ut distinctio tenetur animi nihil rem, amet dolorum totam. Ab repudiandae
+                                    tempore qui fugiat amet ipsa id omnis ipsam, laudantium! Dolorem.
+
+                                    <i class="fa fa-quote-right" />
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="test-inner">
+                                    <div class="test-author-thumb d-flex">
+                                        <img
+                                            src="/theme_hspl_emerald/static/src/img/client/test-6.jpg"
+                                            alt="Testimonial author"
+                                            class="img-fluid"
+                                        />
+                                        <div class="test-author-info">
+                                            <h4>Will Barrow</h4>
+                                            <h6>Sunrise Paradise Hotel</h6>
+                                        </div>
+                                    </div>
+
+                                    Quas ut distinctio tenetur animi nihil rem, amet dolorum totam. Ab repudiandae
+                                    tempore qui fugiat amet ipsa id omnis ipsam, laudantium! Dolorem.
+
+                                    <i class="fa fa-quote-right" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+    <template id="static_latest_blog" name="Static Latest Blog">
+        <section class="section" id="blog">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 text-center">
+                        <div class="section-heading">
+                            <!-- Heading -->
+                            <h2 class="section-title">
+                                Read our latest news
+                            </h2>
+
+                            <!-- Subheading -->
+                            <p>
+                                Our duty towards you is to share our experience we're reaching in our work path with
+                                you.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- / .row -->
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-box">
+                            <div class="blog-img-box">
+                                <img
+                                    src="/theme_hspl_emerald/static/src/img/blog/blog-1.jpg"
+                                    alt=""
+                                    class="img-fluid blog-img"
+                                />
+                            </div>
+                            <div class="single-blog">
+                                <div class="blog-content">
+                                    <h6>17 October 2018</h6>
+                                    <a href="#">
+                                        <h3
+                                            class="card-title"
+                                        >Top tips to speed up your site in a speedy time</h3>
+                                    </a>
+                                    <p
+                                    >There are many variations of passages Lorem Ipsum available, but majority have
+                                        ama suffered altratio. the lorem.
+                                    </p>
+                                    <a href="#" class="read-more">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-box">
+                            <div class="blog-img-box">
+                                <img
+                                    src="/theme_hspl_emerald/static/src/img/blog/blog-2.jpg"
+                                    alt=""
+                                    class="img-fluid blog-img"
+                                />
+                            </div>
+                            <div class="single-blog">
+                                <div class="blog-content">
+                                    <h6>17 October 2018</h6>
+                                    <a href="#">
+                                        <h3
+                                            class="card-title"
+                                        >Brand your site value with marketing strategies</h3>
+                                    </a>
+
+                                    <p
+                                    >There are many variations of passages Lorem Ipsum available, but majority have
+                                        ama suffered altratio. the lorem.
+                                    </p>
+                                    <a href="#" class="read-more">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-8">
+                        <div class="blog-box">
+                            <div class="blog-img-box">
+                                <img
+                                    src="/theme_hspl_emerald/static/src/img/blog/blog-3.jpg"
+                                    alt=""
+                                    class="img-fluid blog-img"
+                                />
+                            </div>
+                            <div class="single-blog">
+                                <div class="blog-content">
+                                    <h6>17 October 2018</h6>
+                                    <a href="#">
+                                        <h3
+                                            class="card-title"
+                                        >Website Optimization is very essential for site speed
+                                        </h3>
+                                    </a>
+                                    <p
+                                    >There are many variations of passages Lorem Ipsum available, but majority have
+                                        ama suffered altratio. the lorem.
+                                    </p>
+                                    <a href="#" class="read-more">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+    <template id="banner_slider" name="Banner Slider">
+        <section
+            id="myCarousel"
+            class="s_carousel s_carousel_default carousel slide"
+            data-interval="10000"
+        >
+            <!-- Content -->
+            <div class="carousel-inner">
+
+                <div class="carousel-item active" data-name="Slide 1">
+                    <section class="banner-area py-5" id="banner">
+                        <div class="overlay" />
+                        <!-- Content -->
+                        <div class="container">
+                            <div class="row  align-items-center">
+                                <div class="col-md-12 col-lg-8">
+                                    <div
+                                        class="banner-content text-center text-lg-left"
+                                    >
+                                        <!-- Heading -->
+                                        <h1 class="display-4 mb-4 ">
+                                            Industry<br
+                                            />Leading Managed Services Solutions
+                                        </h1>
+
+                                        <!-- Subheading -->
+                                        <p class="lead mb-5">
+                                            Pindom is set of landing and support pages aimed at helping companies
+                                            promote new products and business launches.
+                                        </p>
+
+                                        <!-- Button -->
+                                        <p class="mb-0">
+                                            <a
+                                                href="#"
+                                                target="_blank"
+                                                class="btn btn-primary btn-circled"
+                                            >
+                                                Purchase now
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- / .row -->
+                        </div>
+                        <!-- / .container -->
+                    </section>
+                </div>
+
+            </div>
+        </section>
+    </template>
+    <template id="image_features" name="Image - Features">
+        <section id="about" class="section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="img-block">
+                            <img
+                                src="/theme_hspl_emerald/static/src/img/blog-lg.jpg"
+                                alt=""
+                                class="img-fluid"
+                            />
+                        </div>
+                    </div>
+                    <div class="col-lg-8 pt-6 col-md-12">
+                        <div class="row justy-content-center">
+                            <div class="col-lg-6 col-sm-6 col-md-6 mb-5">
+                                <div class="text-center about-block">
+                                    <div class="img-icon mb-4">
+                                        <span class="fa fa-thumbs-o-up fa-4x" />
+                                    </div>
+                                    <h4 class="mb-2">The right advice</h4>
+                                    <p
+                                    >Our team are experts in matching you with the right provider.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-sm-6 col-md-6 mb-5">
+                                <div class="text-center about-block">
+                                    <div class="img-icon mb-4">
+                                        <span class="fa fa-trophy fa-4x" />
+                                    </div>
+                                    <h4 class="mb-2">Recognised for excellence</h4>
+                                    <p
+                                    >We've been awarded for our high rate of customer satisfaction.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-sm-6 col-md-6">
+                                <div class="text-center about-block">
+                                    <div class="img-icon mb-4">
+                                        <span class="fa fa-balance-scale fa-4x" />
+                                    </div>
+                                    <h4 class="mb-2">Compare the best</h4>
+                                    <p
+                                    >We only compare market leaders with a reputation for service quality.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-sm-6 col-md-6">
+                                <div class="text-center about-block">
+                                    <div class="img-icon mb-4">
+                                        <span class="fa fa-tachometer fa-4x" />
+                                    </div>
+                                    <h4 class="mb-2">Premium Services</h4>
+                                    <p
+                                    >We only compare market leaders with a reputation for service quality.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+    <template id="service_features" name="Service - Features">
+        <section class="section" id="service">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-7 pl-4 text-center">
+                        <div class="service-heading">
+                            <h2>Get a better deal and start saving money today</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-block media">
+                            <div class="service-icon">
+                                <span class="fa fa-refresh" />
+                            </div>
+                            <div class="service-inner-content media-body">
+                                <h4>Backup System</h4>
+                                <p
+                                >Our team are experts in matching you with the right provider.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 mb-3 col-md-6">
+                        <div class="service-block media">
+                            <div class="service-icon">
+                                <span class="fa fa-cloud" />
+                            </div>
+                            <div class="service-inner-content media-body">
+                                <h4>Cloud Hosting</h4>
+                                <p
+                                >Our team are experts in matching you with the right provider.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 mb-3 col-md-6">
+                        <div class="service-block media ">
+                            <div class="service-icon">
+                                <span class="fa fa-globe" />
+                            </div>
+                            <div class="service-inner-content media-body">
+                                <h4>Web hosting</h4>
+                                <p
+                                >Our team are experts in matching you with the right provider.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 mb-3 col-md-6">
+                        <div class="service-block media ">
+                            <div class="service-icon">
+                                <span class="fa fa-server" />
+                            </div>
+                            <div class="service-inner-content media-body">
+                                <h4>Office Cloud</h4>
+                                <p
+                                >Our team are experts in matching you with the right provider.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-block media">
+                            <div class="service-icon">
+                                <span class="fa fa-globe" />
+                            </div>
+                            <div class="service-inner-content media-body">
+                                <h4>Web hosting</h4>
+                                <p
+                                >Our team are experts in matching you with the right provider.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-block media">
+                            <div class="service-icon">
+                                <span class="fa fa-cloud" />
+                            </div>
+                            <div class="service-inner-content media-body">
+                                <h4>Office Cloud</h4>
+                                <p
+                                >Our team are experts in matching you with the right provider.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <p class="pl-3">Want to know more about this?
+                            <a href="#">Contact us</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </template>
+
+    <template id="work_portfolio" name="Work Portfolio">
+        <section id="work-wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="section-heading">
+                            <h1
+                            >We are trying to deliver 100% quality product and success their business to achieve
+                                ultimate goal.
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <p
+                            class="lead"
+                        >We are providing best service since 1990 to present , committed to best service
+                            deliveryNullam metus enim, placerat in lacus vel, porttitor egestas libero. Etiam ex risus,
+                            feugiat eget accumsan eu, sagittis eu urna. In eget ultrices metus. Nunc accumsan
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="section-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 p-0">
+                        <div class="work-block">
+                            <img
+                                src="/theme_hspl_emerald/static/src/img/work/10.jpg"
+                                alt="work-img"
+                                class="img-fluid"
+                            />
+                            <div class="overlay-content-block">
+                                <h4>Probiz portfolio template</h4>
+                                <p>Web Development</p>
+                                <a href="#">
+                                    <i class="fa fa-link" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 p-0">
+                        <div class="work-block">
+                            <img
+                                src="/theme_hspl_emerald/static/src/img/work/11.jpg"
+                                alt="work-img"
+                                class="img-fluid"
+                            />
+                            <div class="overlay-content-block">
+                                <h4>Probiz portfolio template</h4>
+                                <p>Web Development</p>
+                                <a href="#">
+                                    <i class="fa fa-link" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 p-0">
+                        <div class="work-block">
+                            <img
+                                src="/theme_hspl_emerald/static/src/img/work/12.jpg"
+                                alt="work-img"
+                                class="img-fluid"
+                            />
+                            <div class="overlay-content-block">
+                                <h4>Probiz portfolio template</h4>
+                                <p>Web Development</p>
+                                <a href="#">
+                                    <i class="fa fa-link" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 p-0">
+                        <div class="work-block">
+                            <img
+                                src="/theme_hspl_emerald/static/src/img/work/15.jpg"
+                                alt="work-img"
+                                class="img-fluid"
+                            />
+                            <div class="overlay-content-block">
+                                <h4>Probiz portfolio template</h4>
+                                <p>Web Development</p>
+                                <a href="#">
+                                    <i class="fa fa-link" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 p-0">
+                        <div class="work-block">
+                            <img
+                                src="/theme_hspl_emerald/static/src/img/work/14.jpg"
+                                alt="work-img"
+                                class="img-fluid"
+                            />
+                            <div class="overlay-content-block">
+                                <h4>Probiz portfolio template</h4>
+                                <p>Web Development</p>
+                                <a href="#">
+                                    <i class="fa fa-link" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 p-0">
+                        <div class="work-block">
+                            <img
+                                src="/theme_hspl_emerald/static/src/img/work/11.jpg"
+                                alt="work-img"
+                                class="img-fluid"
+                            />
+                            <div class="overlay-content-block">
+                                <h4>Probiz portfolio template</h4>
+                                <p>Web Development</p>
+                                <a href="#">
+                                    <i class="fa fa-link" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 p-0">
+                        <div class="work-block">
+                            <img
+                                src="/theme_hspl_emerald/static/src/img/work/10.jpg"
+                                alt="work-img"
+                                class="img-fluid"
+                            />
+                            <div class="overlay-content-block">
+                                <h4>Probiz portfolio template</h4>
+                                <p>Web Development</p>
+                                <a href="#">
+                                    <i class="fa fa-link" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="banner_slider_2" name="Banner Slider 2">
+        <section
+            id="myCarousel"
+            class="s_carousel s_carousel_default carousel slide"
+            data-interval="10000"
+        >
+            <!-- Content -->
+            <div class="carousel-inner">
+
+                <div class="carousel-item active" data-name="Slide 1">
+                    <section class="banner-area py-5" id="banner-3">
+                        <div class="overlay" />
+                        <!-- Content -->
+                        <div class="container">
+                            <div class="row  align-items-center justify-content-center">
+                                <div class="col-md-12 col-lg-9">
+                                    <div class="banner-content text-center style-2">
+                                        <!-- Heading -->
+                                        <h1 class="display-4 mb-4 ">
+                                            Industry Leading Managed Services Solutions
+                                        </h1>
+
+                                        <!-- Subheading -->
+                                        <p class="lead mb-5 pr-0">
+                                            Pindom is set of landing and support pages aimed at helping companies
+                                            promote new products and business launches.
+                                        </p>
+
+                                        <!-- Button -->
+                                        <a
+                                            href="#"
+                                            target="_blank"
+                                            class="btn btn-primary btn-circled"
+                                        >
+                                            Purchase now
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- / .row -->
+                        </div>
+                        <!-- / .container -->
+                    </section>
+                </div>
+
+            </div>
+        </section>
+    </template>
+    <template id="banner_slider_3" name="Banner Slider 3">
+        <section
+            id="myCarousel"
+            class="s_carousel s_carousel_default carousel slide"
+            data-interval="10000"
+        >
+            <!-- Content -->
+            <div class="carousel-inner">
+
+                <div class="carousel-item active" data-name="Slide 1">
+                    <section class="banner-area py-5" id="banner-4">
+                        <div class="overlay feature-overlay" />
+                        <!-- Content -->
+                        <div class="container">
+                            <div class="row  align-items-center justify-content-center">
+                                <div class="col-md-12 col-lg-9">
+                                    <div class="banner-content2 text-center style-2">
+                                        <!-- Heading -->
+                                        <h1 class="display-4 mb-4 ">
+                                            Industry Leading Managed Services Solutions
+                                        </h1>
+
+                                        <!-- Subheading -->
+                                        <p class="lead mb-5 pr-0">
+                                            Pindom is set of landing and support pages aimed at helping companies
+                                            promote new products and business launches.
+                                        </p>
+
+                                        <!-- Button -->
+                                        <p class="mb-0">
+                                            <a
+                                                href="#"
+                                                target="_blank"
+                                                class="btn btn-white btn-circled"
+                                            >
+                                                Purchase now
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- / .row -->
+                        </div>
+                        <!-- / .container -->
+                    </section>
+                </div>
+
+            </div>
+        </section>
+
+    </template>
+    <template id="page_banner" name="Page Banner">
+        <section class="page-banner-area page-about">
+            <div class="overlay" />
+            <!-- Content -->
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-9 col-md-12 col-12 text-center">
+                        <div class="page-banner-content">
+                            <h1
+                                class="display-4 font-weight-bold"
+                            >Creative It agency</h1>
+                            <p>We'd love to talk about how we can help you.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- / .row -->
+            </div>
+            <!-- / .container -->
+        </section>
+
+    </template>
+    <template id="single_project" name="Single Project">
+        <section class="section" id="single-project">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="project-lg-img">
+                                    <img
+                                        src="/theme_hspl_emerald/static/src/img/projects/p-2.jpg"
+                                        alt=""
+                                        class="img-fluid w-100"
+                                    />
+                                </div>
+
+                                <div class="project-details-info row">
+                                    <div class="col-lg-2">
+                                        <h5>Client</h5>
+                                        <p>Manpack Inc</p>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <h5>Date</h5>
+                                        <p>17/12/18</p>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <h5>Category</h5>
+                                        <p>Business</p>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <h5>Website</h5>
+                                        <p>www.themefisher.com</p>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <h5>Services</h5>
+                                        <p>Web Development, UX Design</p>
+                                    </div>
+                                </div>
+                                <section>
+                                    <div class="container">
+                                        <div class="row justify-content-center">
+                                            <div class="col-lg-6">
+                                                <div class="project-single-info">
+                                                    <p
+                                                    >Capitalize on low hanging fruit to identify a ballpark value
+                                                        added activity to beta test. Lorem ipsum dolor sit, amet
+                                                        consectetur adipisicing elit. Nostrum ipsa, vero delectus odit
+                                                        provident consequuntur amet laudantium tempora, distinctio,
+                                                        dolorem ex id nihil voluptatum velit quae explicabo porro.
+                                                        Aperiam, fugiat.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="project-single-info">
+                                                    <p
+                                                    >Override the digital divide with additional clickthroughs from
+                                                        DevOps. Nanotechnology immersion along the information highway
+                                                        will close the loop on focusing solely on the bottom line.
+                                                        Podcasting operational change management inside of workflows to
+                                                        establish a framework. Taking seamless key performance
+                                                        indicators offline.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </template>
+    <template id="list_with_image" name="List - Image">
+        <section class="pb-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="row justify-content-center mt50">
+                                    <div class="col-lg-6">
+                                        <div class="project-info">
+                                            <h3>How we did it</h3>
+                                            <p
+                                            >Capitalize on low hanging fruit to identify a ballpark value added
+                                                activity to beta test.
+                                            </p>
+
+                                            <ul class="list-unstyled">
+                                                <li>
+                                                    <h5>Research about the project</h5>
+                                                    <p
+                                                    >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero,
+                                                        eveniet.
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <h5>Make a prototype</h5>
+                                                    <p
+                                                    >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero,
+                                                        eveniet.
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <h5
+                                                    >Design &amp; Develop The Web</h5>
+                                                    <p
+                                                    >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero,
+                                                        eveniet.
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <h5>Launch The project</h5>
+                                                    <p
+                                                    >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero,
+                                                        eveniet.
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <img
+                                            src="/theme_hspl_emerald/static/src/img/projects/2-min.jpg"
+                                            alt=""
+                                            class="img-fluid"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </template>
+</odoo>
