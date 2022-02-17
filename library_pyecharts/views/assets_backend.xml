@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+         <template id="library_pyecharts" name="library_pyecharts" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/library_pyecharts/static/src/js/echarts.min.js"></script>
+                <script type="text/javascript" src="/library_pyecharts/static/src/js/china.js"></script>
+                <script type="text/javascript" src="/library_pyecharts/static/src/js/load_pyecharts.js"></script>
+                <link rel="stylesheet" type="text/scss" href="/library_pyecharts/static/src/css/adminlte.min.css"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

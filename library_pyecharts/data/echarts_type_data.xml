@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="echarts_type_001" model="echarts.type">
+            <field name="name">柱状图</field>
+            <field name="etype">Bar</field>
+        </record>
+        <record id="echarts_type_002" model="echarts.type">
+            <field name="name">仪表盘</field>
+            <field name="etype">Gauge</field>
+        </record>
+        <record id="echarts_type_003" model="echarts.type">
+            <field name="name">折线图</field>
+            <field name="etype">Line</field>
+        </record>
+        <record id="echarts_type_004" model="echarts.type">
+            <field name="name">热力图</field>
+            <field name="etype">Heatmap</field>
+        </record>
+    </data>
+</odoo>

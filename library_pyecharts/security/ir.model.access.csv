@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_echarts_type,library_pyecharts.echarts_type,library_pyecharts.model_echarts_type,base.group_user,1,1,1,1
+access_echarts_dashboard,library_pyecharts.echarts_dashboard,library_pyecharts.model_echarts_dashboard,base.group_user,1,1,1,1
+access_echarts_dashboard_line,library_pyecharts.echarts_dashboard_line,library_pyecharts.model_echarts_dashboard_line,base.group_user,1,1,1,1

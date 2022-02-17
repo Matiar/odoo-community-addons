@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="echarts_type_001" model="echarts.dashboard">
+            <field name="name">默认Dashboard</field>
+            <field name="column">2</field>
+            <field name="is_active">True</field>
+            <field name="line_ids" eval="[
+                (0, 0, {'sequence': 0, 'echart': ref('echarts_type_003')}),
+                (0, 0, {'sequence': 1, 'echart': ref('echarts_type_001')}),
+                (0, 0, {'sequence': 2, 'echart': ref('echarts_type_004')}),
+                (0, 0, {'sequence': 3, 'echart': ref('echarts_type_002')}),
+                ]"></field>
+        </record>
+    </data>
+</odoo>

@@ -81,6 +81,8 @@ class TrialView(models.TransientModel):
         filters['journals_list'] = data.get('journals_list')
         filters['company_name'] = data.get('company_name')
         filters['target_move'] = data.get('target_move').capitalize()
+        filters['date_from'] = data.get('date_from')
+        filters['date_to'] = data.get('date_to')
 
         return filters
 
@@ -174,9 +176,9 @@ class TrialView(models.TransientModel):
             wheres.append(where_clause.strip())
         filters = " AND ".join(wheres)
         if data['target_move'] == 'posted':
-            filters += " AND account_move_line__move_id.state = 'posted'"
+            filters += " AND  account_move_line.parent_state = 'posted'"
         else:
-            filters += " AND account_move_line__move_id.state in ('draft','posted')"
+            filters += " AND  account_move_line.parent_state in ('draft','posted')"
         if data.get('date_from'):
             filters += " AND account_move_line.date >= '%s'" % data.get('date_from')
         if data.get('date_to'):
@@ -233,9 +235,9 @@ class TrialView(models.TransientModel):
                 wheres.append(where_clause.strip())
             filters = " AND ".join(wheres)
             if data['target_move'] == 'posted':
-                filters += " AND account_move_line__move_id.state = 'posted'"
+                filters += " AND  account_move_line.parent_state = 'posted'"
             else:
-                filters += " AND account_move_line__move_id.state in ('draft','posted')"
+                filters += " AND  account_move_line.parent_state in ('draft','posted')"
             if data.get('date_from'):
                 filters += " AND account_move_line.date < '%s'" % data.get('date_from')
 

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="action_pyecharts" model="ir.actions.client">
+            <field name="name">Dashboard</field>
+            <field name="tag">load_pyecharts</field>
+        </record>
+        <menuitem
+            id="menu_echarts"
+            name="Echarts"
+            groups="base.group_user"
+            sequence="1" />
+        <menuitem
+            id="menu_pyecharts"
+            name="Dashboard"
+            action="action_pyecharts"
+            parent="menu_echarts"
+            groups="base.group_user"
+            sequence="10" />
+
+        <menuitem
+            id="menu_dashboard"
+            name="Dashboard Config"
+            parent="menu_echarts"
+            groups="base.group_user"
+            sequence="20" />
+
+        <menuitem
+            id="menu_echarts_config"
+            name="Echarts Config"
+            parent="menu_echarts"
+            groups="base.group_user"
+            sequence="30" />
+
+    </data>
+</odoo>

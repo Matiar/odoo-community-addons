@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_dashboard_tree" model="ir.ui.view">
+        <field name="name">Dashboard Config</field>
+        <field name="model">echarts.dashboard</field>
+        <field name="arch" type="xml">
+            <tree string="Dashboard">
+                <field name="name"/>
+                <field name="column"/>
+                <field name="theme"/>
+                <field name="is_active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_dashboard_form" model="ir.ui.view">
+        <field name="name">Dashboard Config</field>
+        <field name="model">echarts.dashboard</field>
+        <field name="arch" type="xml">
+            <form string="Echarts Type">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="theme"/>
+                            <field name="height"/>
+                        </group>
+                        <group>
+                            <field name="column"/>
+                            <field name="is_active"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Dashboard Detail">
+                            <field name="line_ids" widget="one2many">
+                                <tree editable="bottom">
+                                    <field name="sequence"/>
+                                    <field name="echart"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_dashboard_config" model="ir.actions.act_window">
+        <field name="name">Dashboard Config</field>
+        <field name="res_model">echarts.dashboard</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Dashboard
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+            id="menu_dashboard_config"
+            name="Dashboard Config"
+            parent="menu_dashboard"
+            action="action_dashboard_config"
+            groups="base.group_user"/>
+</odoo>
+

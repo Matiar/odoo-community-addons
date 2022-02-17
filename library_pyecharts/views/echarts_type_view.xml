@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_echarts_type_tree" model="ir.ui.view">
+        <field name="name">Echarts Type</field>
+        <field name="model">echarts.type</field>
+        <field name="arch" type="xml">
+            <tree string="Echarts Type">
+                <field name="name"/>
+                <field name="etype"/>
+                <field name="is_toolbox"/>
+                <field name="is_title"/>
+                <field name="title"/>
+                <field name="is_subtitle"/>
+                <field name="subtitle"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_echarts_type_form" model="ir.ui.view">
+        <field name="name">Echarts Type</field>
+        <field name="model">echarts.type</field>
+        <field name="arch" type="xml">
+            <form string="Echarts Type">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="is_title"/>
+                            <field name="is_subtitle"/>
+                            <field name="is_toolbox"/>
+                        </group>
+                        <group>
+                            <field name="etype"/>
+                            <field name="title"/>
+                            <field name="subtitle"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_echarts_type" model="ir.actions.act_window">
+        <field name="name">Echarts Type</field>
+        <field name="res_model">echarts.type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Echarts Type
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+            id="menu_echarts_type"
+            name="Echarts Type"
+            parent="menu_echarts_config"
+            action="action_echarts_type"
+            groups="base.group_user"/>
+</odoo>
+
