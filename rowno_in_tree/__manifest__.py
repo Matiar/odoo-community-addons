@@ -3,6 +3,7 @@
     'name': "Row Number in tree/list view",
     'version': '15.0.0',
     'summary': 'Show row number in tree/list view.',
+    "license": "LGPL-3",
     'category': 'Other',
     'description': """By installing this module, user can see row number in Odoo backend tree view.""",
     "depends" : ['web'],
